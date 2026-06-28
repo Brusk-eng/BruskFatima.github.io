@@ -38,83 +38,42 @@
     </div>
   </div>
 
+  
   <!-- Envelope Opening -->
   <div id="envelope-overlay" class="envelope-overlay envelope-hidden" aria-hidden="true">
     <div class="envelope-vignette" aria-hidden="true"></div>
-    <div class="envelope-gold-frame" aria-hidden="true">
-      <span class="corner-ornament corner-tl"></span>
-      <span class="corner-ornament corner-tr"></span>
-      <span class="corner-ornament corner-bl"></span>
-      <span class="corner-ornament corner-br"></span>
-    </div>
 
     <div class="envelope-scene">
-      <p class="envelope-monogram script-heading" aria-hidden="true">Brusk &amp; Fatima</p>
-
-      <!-- Twin Swans on Lake -->
-      <div class="swan-lake" aria-hidden="true">
-        <div class="lake-water">
-          <div class="lake-shimmer"></div>
-          <div class="lake-ripple lake-ripple-1"></div>
-          <div class="lake-ripple lake-ripple-2"></div>
-        </div>
-        <div class="swan-pair">
-          <svg class="swan-svg swan-left" viewBox="0 0 140 110" aria-hidden="true">
-            <defs>
-              <linearGradient id="swanBodyL" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#fffef9"/>
-                <stop offset="100%" stop-color="#f5ebe0"/>
-              </linearGradient>
-            </defs>
-            <path class="swan-body" fill="url(#swanBodyL)" stroke="#d4bc8a" stroke-width="0.6" d="M18 78c-2-12 8-28 28-32 14-3 28 2 36 14 8 12 4 28-10 34-18 8-38 4-48-8-6-8-8-16-6-20z"/>
-            <path class="swan-neck" fill="url(#swanBodyL)" stroke="#d4bc8a" stroke-width="0.6" d="M46 52c4-18 14-38 28-46 6-3 12-2 14 4 2 6-2 14-8 20-10 12-22 22-30 28"/>
-            <circle class="swan-head" cx="72" cy="18" r="5.5" fill="#fffef9" stroke="#d4bc8a" stroke-width="0.5"/>
-            <path class="swan-beak" fill="#c9a962" d="M77 17 L84 14 L77 21 Z"/>
-            <ellipse class="swan-reflection" cx="42" cy="92" rx="28" ry="4" fill="rgba(255,254,249,0.25)"/>
-          </svg>
-          <svg class="swan-heart" viewBox="0 0 40 30" aria-hidden="true">
-            <path fill="none" stroke="#c9a962" stroke-width="0.8" opacity="0.5" d="M4 22 Q20 2 36 22"/>
-          </svg>
-          <svg class="swan-svg swan-right" viewBox="0 0 140 110" aria-hidden="true">
-            <defs>
-              <linearGradient id="swanBodyR" x1="100%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#fffef9"/>
-                <stop offset="100%" stop-color="#f5ebe0"/>
-              </linearGradient>
-            </defs>
-            <path class="swan-body" fill="url(#swanBodyR)" stroke="#d4bc8a" stroke-width="0.6" d="M122 78c2-12-8-28-28-32-14-3-28 2-36 14-8 12-4 28 10 34 18 8 38 4 48-8 6-8 8-16 6-20z"/>
-            <path class="swan-neck" fill="url(#swanBodyR)" stroke="#d4bc8a" stroke-width="0.6" d="M94 52c-4-18-14-38-28-46-6-3-12-2-14 4-2 6 2 14 8 20 10 12 22 22 30 28"/>
-            <circle class="swan-head" cx="68" cy="18" r="5.5" fill="#fffef9" stroke="#d4bc8a" stroke-width="0.5"/>
-            <path class="swan-beak" fill="#c9a962" d="M63 17 L56 14 L63 21 Z"/>
-            <ellipse class="swan-reflection" cx="98" cy="92" rx="28" ry="4" fill="rgba(255,254,249,0.25)"/>
-          </svg>
-        </div>
+      <div class="swan-container" aria-hidden="true">
+        <svg class="majestic-swan majestic-swan-left" viewBox="0 0 100 100">
+          <path d="M20 70 C10 60 10 40 25 35 C35 30 40 20 30 10 C20 0 10 10 15 25 C15 35 25 45 40 45 C50 45 60 55 60 65 C60 80 40 80 20 70 Z" fill="none" stroke="#d4bc8a" stroke-width="1.5"/>
+          <path d="M40 45 C45 35 55 25 65 30 C70 32 75 30 75 25 C75 20 70 15 60 20 C50 25 45 35 40 45 Z" fill="none" stroke="#d4bc8a" stroke-width="1"/>
+        </svg>
+        <svg class="majestic-swan majestic-swan-right" viewBox="0 0 100 100">
+          <path d="M80 70 C90 60 90 40 75 35 C65 30 60 20 70 10 C80 0 90 10 85 25 C85 35 75 45 60 45 C50 45 40 55 40 65 C40 80 60 80 80 70 Z" fill="none" stroke="#d4bc8a" stroke-width="1.5"/>
+          <path d="M60 45 C55 35 45 25 35 30 C30 32 25 30 25 25 C25 20 30 15 40 20 C50 25 55 35 60 45 Z" fill="none" stroke="#d4bc8a" stroke-width="1"/>
+        </svg>
       </div>
 
       <div class="envelope-stage">
         <div class="envelope" id="envelope">
           <div class="envelope-back"></div>
-          <div class="envelope-emboss" aria-hidden="true"></div>
           <div class="envelope-paper" id="envelope-paper">
             <div class="envelope-paper-inner">
               <span class="paper-initials">B &amp; F</span>
               <span class="paper-sub" data-i18n="envelope.invited">You are invited</span>
             </div>
           </div>
-          <div class="envelope-flap envelope-flap-bottom"></div>
-          <div class="envelope-flap envelope-flap-left"></div>
-          <div class="envelope-flap envelope-flap-right"></div>
-          <div class="envelope-flap envelope-flap-top" id="envelope-flap-top"></div>
-          <button
-            type="button"
-            class="wax-seal"
-            id="wax-seal"
-            aria-label="Open wedding invitation"
-            data-i18n-aria="envelope.openAria"
-          >
-            <span class="wax-seal-glow"></span>
-            <span class="wax-seal-ring" aria-hidden="true"></span>
-            <span class="wax-seal-text">B &amp; F</span>
+          
+          <div class="envelope-flap envelope-flap-left"><div class="flap-emboss"></div></div>
+          <div class="envelope-flap envelope-flap-right"><div class="flap-emboss"></div></div>
+          <div class="envelope-flap envelope-flap-bottom"><div class="flap-emboss"></div></div>
+          <div class="envelope-flap envelope-flap-top" id="envelope-flap-top"><div class="flap-emboss"></div></div>
+
+          <button type="button" class="wax-seal" id="wax-seal" aria-label="Open wedding invitation" data-i18n-aria="envelope.openAria">
+            <div class="wax-seal-inner">
+              <span class="wax-seal-text">B &amp; F</span>
+            </div>
           </button>
         </div>
       </div>
