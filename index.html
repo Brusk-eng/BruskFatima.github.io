@@ -7,13 +7,39 @@
   <title>Brusk & Fatima — Wedding Invitation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Magic stardust trail layer -->
+  <div class="magic-layer" id="magic-layer" aria-hidden="true"></div>
+  <!-- Magic shimmer sweep (language switch) -->
+  <div class="magic-sweep" id="magic-sweep" aria-hidden="true"></div>
+
+  <!-- Language Choosing Splash -->
+  <div id="lang-splash" class="lang-splash" role="dialog" aria-modal="true" aria-label="Choose your language">
+    <div class="lang-splash-bg" aria-hidden="true"></div>
+    <div class="lang-splash-inner">
+      <span class="lang-splash-orn" aria-hidden="true">✦</span>
+      <p class="lang-splash-couple script-heading">Brusk &amp; Fatima</p>
+      <p class="lang-splash-sub">Choose your language</p>
+      <p class="lang-splash-sub lang-splash-sub-ku" lang="ckb" dir="rtl">زمانەکەت هەڵبژێرە</p>
+      <div class="lang-splash-buttons">
+        <button type="button" class="lang-choice" data-lang="en">
+          <span class="lang-choice-main">English</span>
+          <span class="lang-choice-sub">Continue in English</span>
+        </button>
+        <button type="button" class="lang-choice" data-lang="ku" lang="ckb" dir="rtl">
+          <span class="lang-choice-main">کوردی</span>
+          <span class="lang-choice-sub">بەردەوامبوون بە کوردی</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Envelope Opening -->
-  <div id="envelope-overlay" class="envelope-overlay" aria-hidden="false">
+  <div id="envelope-overlay" class="envelope-overlay envelope-hidden" aria-hidden="true">
     <div class="envelope-vignette" aria-hidden="true"></div>
     <div class="envelope-gold-frame" aria-hidden="true">
       <span class="corner-ornament corner-tl"></span>
@@ -23,7 +49,7 @@
     </div>
 
     <div class="envelope-scene">
-      <p class="envelope-monogram script-heading" aria-hidden="true">Brusk & Fatima</p>
+      <p class="envelope-monogram script-heading" aria-hidden="true">Brusk &amp; Fatima</p>
 
       <!-- Twin Swans on Lake -->
       <div class="swan-lake" aria-hidden="true">
@@ -71,8 +97,8 @@
           <div class="envelope-emboss" aria-hidden="true"></div>
           <div class="envelope-paper" id="envelope-paper">
             <div class="envelope-paper-inner">
-              <span class="paper-initials">B & F</span>
-              <span class="paper-sub">You are invited</span>
+              <span class="paper-initials">B &amp; F</span>
+              <span class="paper-sub" data-i18n="envelope.invited">You are invited</span>
             </div>
           </div>
           <div class="envelope-flap envelope-flap-bottom"></div>
@@ -84,35 +110,50 @@
             class="wax-seal"
             id="wax-seal"
             aria-label="Open wedding invitation"
+            data-i18n-aria="envelope.openAria"
           >
             <span class="wax-seal-glow"></span>
             <span class="wax-seal-ring" aria-hidden="true"></span>
-            <span class="wax-seal-text">B & F</span>
+            <span class="wax-seal-text">B &amp; F</span>
           </button>
         </div>
       </div>
-      <p class="envelope-hint" id="envelope-hint">Tap the seal to open</p>
+      <p class="envelope-hint" id="envelope-hint" data-i18n="envelope.hint">Tap the seal to open</p>
     </div>
   </div>
 
   <!-- Floating Petals & Sparkles -->
   <div class="ambient-layer" id="ambient-layer" aria-hidden="true"></div>
 
-  <!-- Music Button -->
-  <button
-    type="button"
-    class="music-btn"
-    id="music-btn"
-    aria-label="Play wedding music"
-    aria-pressed="false"
-  >
-  <svg class="music-icon music-icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M8 5v14l11-7z"/>
-  </svg>
-  <svg class="music-icon music-icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-  </svg>
-  </button>
+  <!-- Floating Controls -->
+  <div class="floating-controls" id="floating-controls">
+    <!-- Language Toggle -->
+    <button
+      type="button"
+      class="lang-toggle"
+      id="lang-toggle"
+      aria-label="Switch language"
+      data-i18n-aria="controls.langAria"
+    >
+      <span class="lang-toggle-flag" id="lang-toggle-flag">کوردی</span>
+    </button>
+    <!-- Music Button -->
+    <button
+      type="button"
+      class="music-btn"
+      id="music-btn"
+      aria-label="Play wedding music"
+      aria-pressed="false"
+      data-i18n-aria="controls.musicPlayAria"
+    >
+      <svg class="music-icon music-icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+      <svg class="music-icon music-icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+      </svg>
+    </button>
+  </div>
   <!-- Replace music file: assets/music.mp3 -->
   <audio id="wedding-music" loop preload="none">
     <source src="assets/music.mp3" type="audio/mpeg">
@@ -174,17 +215,17 @@
         </div>
       </div>
       <div class="hero-content reveal">
-        <p class="hero-label script-heading">Wedding Day</p>
-        <p class="hero-day">Thursday</p>
+        <p class="hero-label script-heading" data-i18n="hero.weddingDay">Wedding Day</p>
+        <p class="hero-day" data-i18n="hero.thursday">Thursday</p>
         <p class="hero-date" id="hero-date">09 July 2026</p>
         <div class="hero-names">
           <span class="hero-name script-heading" id="hero-groom">Brusk</span>
-          <span class="hero-amp">&</span>
+          <span class="hero-amp">&amp;</span>
           <span class="hero-name script-heading" id="hero-bride">Fatima</span>
         </div>
       </div>
       <a href="#blessing" class="scroll-down" aria-label="Scroll down">
-        <span>Scroll Down</span>
+        <span data-i18n="hero.scroll">Scroll Down</span>
         <span class="scroll-arrow"></span>
       </a>
     </section>
@@ -194,97 +235,97 @@
       <div class="container reveal">
         <p class="arabic-blessing" dir="rtl" lang="ar">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
         <div class="blessing-verse">
-          <p class="script-heading">Two Souls</p>
-          <p class="script-heading">One Destiny</p>
-          <p class="blessing-sub">A Lifetime Written by Allah</p>
+          <p class="script-heading" data-i18n="blessing.soul1">Two Souls</p>
+          <p class="script-heading" data-i18n="blessing.soul2">One Destiny</p>
+          <p class="blessing-sub" data-i18n="blessing.sub">A Lifetime Written by Allah</p>
         </div>
         <div class="blessing-message">
-          <p>Dear Family & Friends,</p>
-          <p>With gratitude to Allah, we warmly invite you to celebrate the beginning of our forever.</p>
-          <p>Your love, prayers, and presence will make this day truly unforgettable.</p>
+          <p data-i18n="blessing.dear">Dear Family &amp; Friends,</p>
+          <p data-i18n="blessing.msg1">With gratitude to Allah, we warmly invite you to celebrate the beginning of our forever.</p>
+          <p data-i18n="blessing.msg2">Your love, prayers, and presence will make this day truly unforgettable.</p>
         </div>
       </div>
     </section>
 
     <!-- Countdown -->
-    <section class="section countdown-section" id="countdown" aria-label="Countdown timer">
+    <section class="section countdown-section" id="countdown-section" aria-label="Countdown timer">
       <div class="container reveal">
-        <h2 class="section-title">The Celebration Begins In</h2>
+        <h2 class="section-title" data-i18n="countdown.title">The Celebration Begins In</h2>
         <div class="countdown" id="countdown" role="timer" aria-live="polite">
           <div class="countdown-box">
             <span class="countdown-num" id="count-days">00</span>
-            <span class="countdown-label">Days</span>
+            <span class="countdown-label" data-i18n="countdown.days">Days</span>
           </div>
           <div class="countdown-box">
             <span class="countdown-num" id="count-hours">00</span>
-            <span class="countdown-label">Hours</span>
+            <span class="countdown-label" data-i18n="countdown.hours">Hours</span>
           </div>
           <div class="countdown-box">
             <span class="countdown-num" id="count-minutes">00</span>
-            <span class="countdown-label">Minutes</span>
+            <span class="countdown-label" data-i18n="countdown.minutes">Minutes</span>
           </div>
           <div class="countdown-box">
             <span class="countdown-num" id="count-seconds">00</span>
-            <span class="countdown-label">Seconds</span>
+            <span class="countdown-label" data-i18n="countdown.seconds">Seconds</span>
           </div>
         </div>
-        <p class="countdown-today hidden" id="countdown-today">Today is the day.</p>
+        <p class="countdown-today hidden" id="countdown-today" data-i18n="countdown.today">Today is the day.</p>
       </div>
     </section>
 
     <!-- Schedule -->
     <section class="section schedule" id="schedule" aria-label="Schedule of events">
       <div class="container reveal">
-        <h2 class="section-title">Schedule of Events</h2>
+        <h2 class="section-title" data-i18n="schedule.title">Schedule of Events</h2>
         <div class="timeline" id="timeline">
           <div class="timeline-line" aria-hidden="true"></div>
           <article class="timeline-item reveal-child">
             <div class="timeline-marker"><span class="diamond"></span></div>
             <div class="timeline-content">
               <time class="timeline-time">7:00 PM</time>
-              <h3 class="timeline-title">Guest Arrival</h3>
+              <h3 class="timeline-title" data-i18n="schedule.s1">Guest Arrival</h3>
             </div>
           </article>
           <article class="timeline-item reveal-child">
             <div class="timeline-marker"><span class="diamond"></span><span class="rose-icon" aria-hidden="true">✿</span></div>
             <div class="timeline-content">
               <time class="timeline-time">8:00 PM</time>
-              <h3 class="timeline-title">Bride & Groom Grand Entrance</h3>
+              <h3 class="timeline-title" data-i18n="schedule.s2">Bride &amp; Groom Grand Entrance</h3>
             </div>
           </article>
           <article class="timeline-item reveal-child">
             <div class="timeline-marker"><span class="diamond"></span></div>
             <div class="timeline-content">
               <time class="timeline-time">8:15 PM</time>
-              <h3 class="timeline-title">Dinner Service</h3>
+              <h3 class="timeline-title" data-i18n="schedule.s3">Dinner Service</h3>
             </div>
           </article>
           <article class="timeline-item reveal-child">
             <div class="timeline-marker"><span class="diamond"></span></div>
             <div class="timeline-content">
               <time class="timeline-time">9:00 PM</time>
-              <h3 class="timeline-title">Cake Cutting</h3>
+              <h3 class="timeline-title" data-i18n="schedule.s4">Cake Cutting</h3>
             </div>
           </article>
           <article class="timeline-item reveal-child">
             <div class="timeline-marker"><span class="diamond"></span></div>
             <div class="timeline-content">
               <time class="timeline-time">9:30 PM</time>
-              <h3 class="timeline-title">First Dance</h3>
+              <h3 class="timeline-title" data-i18n="schedule.s5">First Dance</h3>
             </div>
           </article>
           <article class="timeline-item reveal-child">
             <div class="timeline-marker"><span class="diamond"></span></div>
             <div class="timeline-content">
               <time class="timeline-time">10:00 PM</time>
-              <h3 class="timeline-title">Celebration & Photography</h3>
+              <h3 class="timeline-title" data-i18n="schedule.s6">Celebration &amp; Photography</h3>
             </div>
           </article>
           <article class="timeline-item reveal-child">
             <div class="timeline-marker"><span class="diamond"></span></div>
             <div class="timeline-content">
               <time class="timeline-time">11:30 PM</time>
-              <h3 class="timeline-title">Closing Ceremony</h3>
+              <h3 class="timeline-title" data-i18n="schedule.s7">Closing Ceremony</h3>
             </div>
           </article>
         </div>
@@ -294,7 +335,7 @@
     <!-- Venue -->
     <section class="section venue" id="venue" aria-label="Venue information">
       <div class="container reveal">
-        <h2 class="section-title">Venue</h2>
+        <h2 class="section-title" data-i18n="venue.title">Venue</h2>
         <div class="venue-card">
           <div class="venue-illustration" aria-hidden="true">
             <svg viewBox="0 0 300 200" class="hotel-svg">
@@ -335,7 +376,7 @@
             allowfullscreen
           ></iframe>
         </div>
-        <a href="#" class="btn btn-gold" id="map-btn" target="_blank" rel="noopener noreferrer">
+        <a href="#" class="btn btn-gold" id="map-btn" target="_blank" rel="noopener noreferrer" data-i18n="venue.maps">
           Open in Google Maps
         </a>
       </div>
@@ -344,15 +385,15 @@
     <!-- Our Story -->
     <section class="section story" id="story" aria-label="Our story">
       <div class="container reveal">
-        <h2 class="section-title">Our Story</h2>
+        <h2 class="section-title" data-i18n="story.title">Our Story</h2>
         <div class="story-timeline">
           <article class="story-item reveal-child">
             <div class="story-icon" aria-hidden="true">
               <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="16" r="8"/><path d="M8 44c0-8 7-14 16-14s16 6 16 14"/></svg>
             </div>
             <div class="story-text">
-              <h3>First Meeting</h3>
-              <p>Where it all began.</p>
+              <h3 data-i18n="story.s1t">First Meeting</h3>
+              <p data-i18n="story.s1p">Where it all began.</p>
             </div>
           </article>
           <article class="story-item reveal-child">
@@ -360,8 +401,8 @@
               <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 42l-2-2C12 26 6 20 6 14a6 6 0 0112 0c0 2 2 4 4 6 2-2 4-4 4-6a6 6 0 0112 0c0 6-6 12-16 24l-2 2z"/></svg>
             </div>
             <div class="story-text">
-              <h3>Engagement</h3>
-              <p>The promise of forever.</p>
+              <h3 data-i18n="story.s2t">Engagement</h3>
+              <p data-i18n="story.s2p">The promise of forever.</p>
             </div>
           </article>
           <article class="story-item reveal-child">
@@ -369,8 +410,8 @@
               <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 20l16-12 16 12v20H8V20z"/><rect x="18" y="28" width="12" height="12"/></svg>
             </div>
             <div class="story-text">
-              <h3>Wedding Day</h3>
-              <p>The beginning of our new chapter.</p>
+              <h3 data-i18n="story.s3t">Wedding Day</h3>
+              <p data-i18n="story.s3p">The beginning of our new chapter.</p>
             </div>
           </article>
           <article class="story-item reveal-child">
@@ -378,8 +419,8 @@
               <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 4l4 12h12l-10 8 4 12-10-8-10 8 4-12-10-8h12z"/></svg>
             </div>
             <div class="story-text">
-              <h3>Forever Begins</h3>
-              <p>A lifetime written by Allah.</p>
+              <h3 data-i18n="story.s4t">Forever Begins</h3>
+              <p data-i18n="story.s4p">A lifetime written by Allah.</p>
             </div>
           </article>
         </div>
@@ -389,7 +430,7 @@
     <!-- Gallery -->
     <section class="section gallery" id="gallery" aria-label="Photo gallery">
       <div class="container reveal">
-        <h2 class="section-title">Memories</h2>
+        <h2 class="section-title" data-i18n="gallery.title">Memories</h2>
         <div class="gallery-grid" id="gallery-grid">
           <div class="gallery-item reveal-child" data-photo="1">
             <img src="assets/photo1.jpg" alt="Wedding memory 1" loading="lazy" onerror="handleImageError(this)">
@@ -422,40 +463,40 @@
     <!-- RSVP -->
     <section class="section rsvp" id="rsvp" aria-label="RSVP form">
       <div class="container reveal">
-        <h2 class="section-title">RSVP</h2>
-        <p class="section-subtitle">Kindly confirm your attendance.</p>
+        <h2 class="section-title" data-i18n="rsvp.title">RSVP</h2>
+        <p class="section-subtitle" data-i18n="rsvp.subtitle">Kindly confirm your attendance.</p>
         <form class="rsvp-form" id="rsvp-form" novalidate>
           <div class="form-group">
-            <label for="rsvp-name">Full Name</label>
-            <input type="text" id="rsvp-name" name="name" required placeholder="Your full name" autocomplete="name">
+            <label for="rsvp-name" data-i18n="rsvp.name">Full Name</label>
+            <input type="text" id="rsvp-name" name="name" required placeholder="Your full name" data-i18n-placeholder="rsvp.namePh" autocomplete="name">
           </div>
           <div class="form-group">
-            <label for="rsvp-phone">Phone Number</label>
-            <input type="tel" id="rsvp-phone" name="phone" required placeholder="Your phone number" autocomplete="tel">
+            <label for="rsvp-phone" data-i18n="rsvp.phone">Phone Number</label>
+            <input type="tel" id="rsvp-phone" name="phone" required placeholder="Your phone number" data-i18n-placeholder="rsvp.phonePh" autocomplete="tel">
           </div>
           <div class="form-group">
-            <label for="rsvp-guests">Number of Guests</label>
+            <label for="rsvp-guests" data-i18n="rsvp.guests">Number of Guests</label>
             <input type="number" id="rsvp-guests" name="guests" required min="1" max="20" placeholder="1" value="1">
           </div>
           <div class="form-group">
-            <span class="label-text">Will Attend?</span>
+            <span class="label-text" data-i18n="rsvp.attend">Will Attend?</span>
             <div class="radio-group" role="radiogroup" aria-label="Will attend">
               <label class="radio-label">
                 <input type="radio" name="attend" value="Yes" required checked>
-                <span>Yes</span>
+                <span data-i18n="rsvp.yes">Yes</span>
               </label>
               <label class="radio-label">
                 <input type="radio" name="attend" value="No">
-                <span>No</span>
+                <span data-i18n="rsvp.no">No</span>
               </label>
             </div>
           </div>
           <div class="form-group">
-            <label for="rsvp-message">Message / Dua</label>
-            <textarea id="rsvp-message" name="message" rows="4" placeholder="Share your wishes or dua"></textarea>
+            <label for="rsvp-message" data-i18n="rsvp.message">Message / Dua</label>
+            <textarea id="rsvp-message" name="message" rows="4" placeholder="Share your wishes or dua" data-i18n-placeholder="rsvp.messagePh"></textarea>
           </div>
-          <button type="submit" class="btn btn-gold btn-full">Send RSVP via WhatsApp</button>
-          <p class="form-note">Your RSVP will be sent through WhatsApp.</p>
+          <button type="submit" class="btn btn-gold btn-full" data-i18n="rsvp.submit">Send RSVP via WhatsApp</button>
+          <p class="form-note" data-i18n="rsvp.note">Your RSVP will be sent through WhatsApp.</p>
         </form>
       </div>
     </section>
@@ -463,36 +504,36 @@
     <!-- Dress Code -->
     <section class="section dress-code" id="dress-code" aria-label="Dress code">
       <div class="container reveal">
-        <h2 class="section-title">Dress Code</h2>
-        <p class="dress-main script-heading">Elegant Formal</p>
+        <h2 class="section-title" data-i18n="dress.title">Dress Code</h2>
+        <p class="dress-main script-heading" data-i18n="dress.main">Elegant Formal</p>
         <div class="dress-details">
           <div class="dress-item">
-            <h3>Ladies</h3>
-            <p>Evening Dresses</p>
+            <h3 data-i18n="dress.ladies">Ladies</h3>
+            <p data-i18n="dress.ladiesVal">Evening Dresses</p>
           </div>
           <div class="dress-divider" aria-hidden="true"></div>
           <div class="dress-item">
-            <h3>Gentlemen</h3>
-            <p>Suit or Formal Attire</p>
+            <h3 data-i18n="dress.gentlemen">Gentlemen</h3>
+            <p data-i18n="dress.gentlemenVal">Suit or Formal Attire</p>
           </div>
         </div>
-        <p class="dress-note">Soft colors and classic styles are warmly appreciated.</p>
+        <p class="dress-note" data-i18n="dress.note">Soft colors and classic styles are warmly appreciated.</p>
       </div>
     </section>
 
     <!-- Gift Note -->
     <section class="section gift" id="gift" aria-label="Gift note">
       <div class="container reveal">
-        <h2 class="section-title">A Small Note</h2>
-        <p class="gift-text">Your love, prayers, and presence are the greatest gifts we could ever receive.</p>
+        <h2 class="section-title" data-i18n="gift.title">A Small Note</h2>
+        <p class="gift-text" data-i18n="gift.text">Your love, prayers, and presence are the greatest gifts we could ever receive.</p>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer" aria-label="Footer">
       <div class="container">
-        <p class="footer-love script-heading">With Love</p>
-        <p class="footer-names" id="footer-names">Brusk & Fatima</p>
+        <p class="footer-love script-heading" data-i18n="footer.love">With Love</p>
+        <p class="footer-names" id="footer-names">Brusk &amp; Fatima</p>
         <p class="footer-date" id="footer-date">Thursday, 09 July 2026</p>
         <p class="footer-venue" id="footer-venue">Divan Erbil Hotel Ballroom</p>
       </div>
