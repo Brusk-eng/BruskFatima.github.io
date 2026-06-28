@@ -14,28 +14,82 @@
 
   <!-- Envelope Opening -->
   <div id="envelope-overlay" class="envelope-overlay" aria-hidden="false">
+    <div class="envelope-vignette" aria-hidden="true"></div>
+    <div class="envelope-gold-frame" aria-hidden="true">
+      <span class="corner-ornament corner-tl"></span>
+      <span class="corner-ornament corner-tr"></span>
+      <span class="corner-ornament corner-bl"></span>
+      <span class="corner-ornament corner-br"></span>
+    </div>
+
     <div class="envelope-scene">
-      <div class="envelope" id="envelope">
-        <div class="envelope-back"></div>
-        <div class="envelope-paper" id="envelope-paper">
-          <div class="envelope-paper-inner">
-            <span class="paper-initials">B & F</span>
-            <span class="paper-sub">You are invited</span>
-          </div>
+      <p class="envelope-monogram script-heading" aria-hidden="true">Brusk & Fatima</p>
+
+      <!-- Twin Swans on Lake -->
+      <div class="swan-lake" aria-hidden="true">
+        <div class="lake-water">
+          <div class="lake-shimmer"></div>
+          <div class="lake-ripple lake-ripple-1"></div>
+          <div class="lake-ripple lake-ripple-2"></div>
         </div>
-        <div class="envelope-flap envelope-flap-bottom"></div>
-        <div class="envelope-flap envelope-flap-left"></div>
-        <div class="envelope-flap envelope-flap-right"></div>
-        <div class="envelope-flap envelope-flap-top" id="envelope-flap-top"></div>
-        <button
-          type="button"
-          class="wax-seal"
-          id="wax-seal"
-          aria-label="Open wedding invitation"
-        >
-          <span class="wax-seal-glow"></span>
-          <span class="wax-seal-text">B & F</span>
-        </button>
+        <div class="swan-pair">
+          <svg class="swan-svg swan-left" viewBox="0 0 140 110" aria-hidden="true">
+            <defs>
+              <linearGradient id="swanBodyL" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fffef9"/>
+                <stop offset="100%" stop-color="#f5ebe0"/>
+              </linearGradient>
+            </defs>
+            <path class="swan-body" fill="url(#swanBodyL)" stroke="#d4bc8a" stroke-width="0.6" d="M18 78c-2-12 8-28 28-32 14-3 28 2 36 14 8 12 4 28-10 34-18 8-38 4-48-8-6-8-8-16-6-20z"/>
+            <path class="swan-neck" fill="url(#swanBodyL)" stroke="#d4bc8a" stroke-width="0.6" d="M46 52c4-18 14-38 28-46 6-3 12-2 14 4 2 6-2 14-8 20-10 12-22 22-30 28"/>
+            <circle class="swan-head" cx="72" cy="18" r="5.5" fill="#fffef9" stroke="#d4bc8a" stroke-width="0.5"/>
+            <path class="swan-beak" fill="#c9a962" d="M77 17 L84 14 L77 21 Z"/>
+            <ellipse class="swan-reflection" cx="42" cy="92" rx="28" ry="4" fill="rgba(255,254,249,0.25)"/>
+          </svg>
+          <svg class="swan-heart" viewBox="0 0 40 30" aria-hidden="true">
+            <path fill="none" stroke="#c9a962" stroke-width="0.8" opacity="0.5" d="M4 22 Q20 2 36 22"/>
+          </svg>
+          <svg class="swan-svg swan-right" viewBox="0 0 140 110" aria-hidden="true">
+            <defs>
+              <linearGradient id="swanBodyR" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#fffef9"/>
+                <stop offset="100%" stop-color="#f5ebe0"/>
+              </linearGradient>
+            </defs>
+            <path class="swan-body" fill="url(#swanBodyR)" stroke="#d4bc8a" stroke-width="0.6" d="M122 78c2-12-8-28-28-32-14-3-28 2-36 14-8 12-4 28 10 34 18 8 38 4 48-8 6-8 8-16 6-20z"/>
+            <path class="swan-neck" fill="url(#swanBodyR)" stroke="#d4bc8a" stroke-width="0.6" d="M94 52c-4-18-14-38-28-46-6-3-12-2-14 4-2 6 2 14 8 20 10 12 22 22 30 28"/>
+            <circle class="swan-head" cx="68" cy="18" r="5.5" fill="#fffef9" stroke="#d4bc8a" stroke-width="0.5"/>
+            <path class="swan-beak" fill="#c9a962" d="M63 17 L56 14 L63 21 Z"/>
+            <ellipse class="swan-reflection" cx="98" cy="92" rx="28" ry="4" fill="rgba(255,254,249,0.25)"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="envelope-stage">
+        <div class="envelope" id="envelope">
+          <div class="envelope-back"></div>
+          <div class="envelope-emboss" aria-hidden="true"></div>
+          <div class="envelope-paper" id="envelope-paper">
+            <div class="envelope-paper-inner">
+              <span class="paper-initials">B & F</span>
+              <span class="paper-sub">You are invited</span>
+            </div>
+          </div>
+          <div class="envelope-flap envelope-flap-bottom"></div>
+          <div class="envelope-flap envelope-flap-left"></div>
+          <div class="envelope-flap envelope-flap-right"></div>
+          <div class="envelope-flap envelope-flap-top" id="envelope-flap-top"></div>
+          <button
+            type="button"
+            class="wax-seal"
+            id="wax-seal"
+            aria-label="Open wedding invitation"
+          >
+            <span class="wax-seal-glow"></span>
+            <span class="wax-seal-ring" aria-hidden="true"></span>
+            <span class="wax-seal-text">B & F</span>
+          </button>
+        </div>
       </div>
       <p class="envelope-hint" id="envelope-hint">Tap the seal to open</p>
     </div>
@@ -74,12 +128,49 @@
         <div class="hero-placeholder"></div>
       </div>
       <div class="hero-frame">
-        <div class="hero-arch"></div>
+        <div class="hero-palace-frame" aria-hidden="true">
+          <div class="hero-arch"></div>
+          <div class="hero-arch-inner"></div>
+          <span class="hero-corner hero-corner-tl"></span>
+          <span class="hero-corner hero-corner-tr"></span>
+        </div>
         <div class="hero-floral hero-floral-left"></div>
         <div class="hero-floral hero-floral-right"></div>
-        <div class="hero-swans" aria-hidden="true">
-          <svg viewBox="0 0 200 80" class="swan swan-left"><path d="M30 60c-5-15 5-35 25-40 8-2 15 0 20 5-8-2-18 2-22 12-3 8-2 18 5 25-10-5-18-15-20-27-3 12 2 25 12 32-8-3-14-10-15-18 2 10 10 18 20 20-15-8-22-28-15-45 5-12 18-20 32-18-20 5-32 25-28 45 2 10 8 18 16 23-12-8-18-22-15-36 4-18 20-30 38-28-25 3-42 26-35 50 3 12 12 22 24 26-18-10-28-32-22-52 5-18 22-30 40-28z" fill="currentColor"/></svg>
-          <svg viewBox="0 0 200 80" class="swan swan-right"><path d="M170 60c5-15-5-35-25-40-8-2-15 0-20 5 8-2 18 2 22 12 3 8 2 18-5 25 10-5 18-15 20-27 3 12-2 25-12 32 8-3 14-10 15-18-2 10-10 18-20 20 15-8 22-28 15-45-5-12-18-20-32-18 20 5 32 25 28 45-2 10-8 18-16 23 12-8 18-22 15-36-4-18-20-30-38-28 25 3 42 26 35 50-3 12-12 22-24 26 18-10 28-32 22-52-5-18-22-30-40-28z" fill="currentColor"/></svg>
+        <div class="hero-lake" aria-hidden="true">
+          <div class="hero-lake-water">
+            <div class="hero-lake-shimmer"></div>
+          </div>
+          <div class="hero-swan-pair">
+            <svg class="hero-swan-svg hero-swan-left" viewBox="0 0 140 110" aria-hidden="true">
+              <defs>
+                <linearGradient id="heroSwanL" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#f8f0e8"/>
+                </linearGradient>
+              </defs>
+              <path fill="url(#heroSwanL)" stroke="#e8d5a8" stroke-width="0.7" d="M18 78c-2-12 8-28 28-32 14-3 28 2 36 14 8 12 4 28-10 34-18 8-38 4-48-8-6-8-8-16-6-20z"/>
+              <path fill="url(#heroSwanL)" stroke="#e8d5a8" stroke-width="0.7" d="M46 52c4-18 14-38 28-46 6-3 12-2 14 4 2 6-2 14-8 20-10 12-22 22-30 28"/>
+              <circle cx="72" cy="18" r="5.5" fill="#ffffff" stroke="#e8d5a8" stroke-width="0.5"/>
+              <path fill="#c9a962" d="M77 17 L84 14 L77 21 Z"/>
+              <ellipse cx="42" cy="92" rx="28" ry="4" fill="rgba(255,255,255,0.3)"/>
+            </svg>
+            <svg class="hero-swan-heart" viewBox="0 0 40 30" aria-hidden="true">
+              <path fill="none" stroke="#c9a962" stroke-width="1" opacity="0.6" d="M4 22 Q20 2 36 22"/>
+            </svg>
+            <svg class="hero-swan-svg hero-swan-right" viewBox="0 0 140 110" aria-hidden="true">
+              <defs>
+                <linearGradient id="heroSwanR" x1="100%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#f8f0e8"/>
+                </linearGradient>
+              </defs>
+              <path fill="url(#heroSwanR)" stroke="#e8d5a8" stroke-width="0.7" d="M122 78c2-12-8-28-28-32-14-3-28 2-36 14-8 12-4 28 10 34 18 8 38 4 48-8 6-8 8-16 6-20z"/>
+              <path fill="url(#heroSwanR)" stroke="#e8d5a8" stroke-width="0.7" d="M94 52c-4-18-14-38-28-46-6-3-12-2-14 4-2 6 2 14 8 20 10 12 22 22 30 28"/>
+              <circle cx="68" cy="18" r="5.5" fill="#ffffff" stroke="#e8d5a8" stroke-width="0.5"/>
+              <path fill="#c9a962" d="M63 17 L56 14 L63 21 Z"/>
+              <ellipse cx="98" cy="92" rx="28" ry="4" fill="rgba(255,255,255,0.3)"/>
+            </svg>
+          </div>
         </div>
       </div>
       <div class="hero-content reveal">
