@@ -31,7 +31,7 @@ const CONFIG = {
   mapUrl: "https://maps.google.com/?q=Divan+Erbil+Hotel",
 
   // WhatsApp RSVP number (no + sign)
-  whatsappNumber: "9647500000000"
+  whatsappNumber: "9647517110712"
 };
 
 /* ============================================
