@@ -42,6 +42,8 @@
   <!-- Envelope Opening -->
   <div id="envelope-overlay" class="envelope-overlay envelope-hidden" aria-hidden="true">
     <div class="envelope-vignette" aria-hidden="true"></div>
+    <div class="envelope-spotlight" aria-hidden="true"></div>
+    <div class="envelope-dust" id="envelope-dust" aria-hidden="true"></div>
 
     <div class="envelope-scene">
       <div class="envelope-crown" aria-hidden="true">
@@ -51,25 +53,41 @@
       </div>
 
       <div class="envelope-stage">
-        <div class="envelope" id="envelope">
-          <div class="envelope-back"></div>
-          <div class="envelope-paper" id="envelope-paper">
-            <div class="envelope-paper-inner">
-              <span class="paper-initials">B &amp; F</span>
-              <span class="paper-sub" data-i18n="envelope.invited">You are invited</span>
+        <div class="royal-parcel">
+          <div class="envelope" id="envelope">
+            <div class="envelope-back"></div>
+            <div class="envelope-liner" aria-hidden="true"></div>
+            <div class="envelope-gold-trim" aria-hidden="true"></div>
+
+            <div class="envelope-flap envelope-flap-left"><div class="flap-emboss"></div></div>
+            <div class="envelope-flap envelope-flap-right"><div class="flap-emboss"></div></div>
+            <div class="envelope-flap envelope-flap-bottom"><div class="flap-emboss"></div></div>
+            <div class="envelope-flap envelope-flap-top" id="envelope-flap-top"><div class="flap-emboss"></div></div>
+
+            <button type="button" class="wax-seal" id="wax-seal" aria-label="Open wedding invitation" data-i18n-aria="envelope.openAria">
+              <span class="seal-halo" aria-hidden="true"></span>
+              <span class="seal-rays" aria-hidden="true"></span>
+              <div class="wax-seal-inner">
+                <span class="wax-seal-text">B &amp; F</span>
+              </div>
+            </button>
+          </div>
+
+          <div class="invitation-card" id="envelope-paper">
+            <div class="card-texture" aria-hidden="true"></div>
+            <div class="card-shimmer" aria-hidden="true"></div>
+            <div class="card-frame">
+              <span class="card-corner card-corner-tl" aria-hidden="true"></span>
+              <span class="card-corner card-corner-tr" aria-hidden="true"></span>
+              <span class="card-corner card-corner-bl" aria-hidden="true"></span>
+              <span class="card-corner card-corner-br" aria-hidden="true"></span>
+              <div class="envelope-paper-inner">
+                <span class="paper-initials">B &amp; F</span>
+                <span class="paper-orn" aria-hidden="true">❧</span>
+                <span class="paper-sub" data-i18n="envelope.invited">You are invited</span>
+              </div>
             </div>
           </div>
-          
-          <div class="envelope-flap envelope-flap-left"><div class="flap-emboss"></div></div>
-          <div class="envelope-flap envelope-flap-right"><div class="flap-emboss"></div></div>
-          <div class="envelope-flap envelope-flap-bottom"><div class="flap-emboss"></div></div>
-          <div class="envelope-flap envelope-flap-top" id="envelope-flap-top"><div class="flap-emboss"></div></div>
-
-          <button type="button" class="wax-seal" id="wax-seal" aria-label="Open wedding invitation" data-i18n-aria="envelope.openAria">
-            <div class="wax-seal-inner">
-              <span class="wax-seal-text">B &amp; F</span>
-            </div>
-          </button>
         </div>
       </div>
       <p class="envelope-hint" id="envelope-hint" data-i18n="envelope.hint">Tap the seal to open</p>
@@ -121,6 +139,7 @@
       <div class="hero-canvas" id="hero-bg" aria-hidden="true">
         <div class="hero-gradient"></div>
         <div class="hero-shimmer"></div>
+        <div class="hero-chandelier" aria-hidden="true"></div>
         <div class="hero-noise"></div>
         <div class="hero-rays"></div>
         <div class="hero-vignette"></div>

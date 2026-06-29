@@ -229,6 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initLanguage();
   initLanguageSplash();
   initEnvelope();
+  initEnvelopeDust();
   initAmbient();
   initMagicStardust();
   initCountdown();
@@ -481,6 +482,30 @@ function initMagicStardust() {
     star.style.setProperty("--rot", `${(Math.random() - 0.5) * 360}deg`);
     layer.appendChild(star);
     setTimeout(() => star.remove(), 1100);
+  }
+}
+
+/* ============================================
+   Envelope Gold Dust
+   ============================================ */
+
+function initEnvelopeDust() {
+  const layer = document.getElementById("envelope-dust");
+  if (!layer) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const count = 24;
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement("span");
+    p.className = "env-particle";
+    const size = 2 + Math.random() * 4;
+    p.style.width = `${size}px`;
+    p.style.height = `${size}px`;
+    p.style.left = `${15 + Math.random() * 70}%`;
+    p.style.top = `${40 + Math.random() * 45}%`;
+    p.style.animationDuration = `${4 + Math.random() * 6}s`;
+    p.style.animationDelay = `${Math.random() * 5}s`;
+    layer.appendChild(p);
   }
 }
 
