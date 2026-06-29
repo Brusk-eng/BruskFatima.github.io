@@ -158,6 +158,22 @@ img {
 
 .envelope-overlay.opening {
   pointer-events: none;
+  animation: overlayRevealForward 1.8s ease forwards;
+}
+
+@keyframes overlayRevealForward {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.06);
+  }
 }
 
 .envelope-overlay.removed {
@@ -213,6 +229,7 @@ img {
   position: relative;
   padding: 1rem 0;
   z-index: 3;
+  perspective: 1600px;
 }
 
 .envelope {
@@ -225,10 +242,11 @@ img {
     0 40px 80px rgba(70, 30, 40, 0.15),
     0 0 100px rgba(201, 169, 98, 0.15);
   transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
 }
 
 .envelope.opening {
-  transform: translateY(20vh) scale(0.9);
+  transform: translateY(-6vh) translateZ(60px) scale(1.05);
 }
 
 .envelope-back {
@@ -256,7 +274,17 @@ img {
 }
 
 .envelope.opened .envelope-paper {
-  transform: translateY(-105%);
+  transform: translateY(-105%) translateZ(40px);
+}
+
+.envelope-flap {
+  position: absolute;
+  inset: 0;
+  transform-origin: center;
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
 
 .envelope-paper-inner {
@@ -284,14 +312,6 @@ img {
   color: var(--text-muted);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-}
-
-.envelope-flap {
-  position: absolute;
-  inset: 0;
-  transform-origin: center;
-  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: none;
 }
 
 .flap-emboss {
@@ -343,20 +363,20 @@ img {
 
 /* Opened states */
 .envelope.opened .envelope-flap-top {
-  transform: rotateX(-180deg);
+  transform: rotateX(180deg);
   z-index: 1; /* drops behind paper after opening */
 }
 
 .envelope.opened .envelope-flap-left {
-  transform: rotateY(25deg);
+  transform: rotateY(12deg);
 }
 
 .envelope.opened .envelope-flap-right {
-  transform: rotateY(-25deg);
+  transform: rotateY(-12deg);
 }
 
 .envelope.opened .envelope-flap-bottom {
-  transform: translateY(20px);
+  transform: translateY(8px);
 }
 
 /* Luxurious Wax Seal */
@@ -751,35 +771,22 @@ img {
 
 .hero-date-grand {
   font-family: var(--font-title);
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
   color: #8c7e6e;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
   margin-bottom: 2rem;
-  text-transform: uppercase;
 }
 
-.hero-names-grand {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.2rem;
-}
-
-.hero-name-large {
+.hero-couple-grand {
   font-family: var(--font-script);
-  font-size: clamp(4rem, 10vw, 6rem);
-  line-height: 1;
+  font-size: clamp(3.2rem, 9vw, 5.5rem);
+  line-height: 1.1;
   color: transparent;
   background: linear-gradient(180deg, #cba560 0%, #a47a32 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
-}
-
-.hero-amp-grand {
-  font-family: var(--font-script);
-  font-size: clamp(2rem, 5vw, 3rem);
-  color: #b89758;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));
+  margin: 0;
 }
 
 .scroll-down-grand {

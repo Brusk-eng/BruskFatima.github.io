@@ -6,6 +6,23 @@
  * Replace music file at: assets/music.mp3
  */
 
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+function resetPageScroll() {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+}
+
+resetPageScroll();
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    resetPageScroll();
+  }
+});
+
 const CONFIG = {
   // Couple names (en = Latin, ku = Kurdish Sorani script)
   groomName: { en: "Brusk", ku: "بروسک" },
@@ -14,7 +31,7 @@ const CONFIG = {
 
   // Dates (shown text only — the live countdown uses countdownDate below)
   weddingDateText: { en: "Thursday, 09 July 2026", ku: "پێنجشەممە، ٩ی تەمموزی ٢٠٢٦" },
-  heroDate: { en: "09 July 2026", ku: "٩ی تەمموزی ٢٠٢٦" },
+  heroDate: { en: "Thursday, 09 July 2026", ku: "پێنجشەممە، ٩ی تەمموزی ٢٠٢٦" },
 
   // Live countdown target (ISO 8601 with Asia/Baghdad offset +03:00)
   countdownDate: "2026-07-09T19:00:00+03:00",
@@ -208,6 +225,7 @@ function handleImageError(img) {
    ============================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
+  resetPageScroll();
   initLanguage();
   initLanguageSplash();
   initEnvelope();
@@ -297,6 +315,7 @@ function initLanguageSplash() {
   });
 
   function revealEnvelope() {
+    resetPageScroll();
     splash.classList.add("dismissed");
     if (overlay) {
       overlay.classList.remove("envelope-hidden");
@@ -321,8 +340,7 @@ function pick(field, lang) {
 }
 
 function applyConfig(lang) {
-  const heroGroom = document.getElementById("hero-groom");
-  const heroBride = document.getElementById("hero-bride");
+  const heroCouple = document.getElementById("hero-couple");
   const heroDate = document.getElementById("hero-date");
   const venueName = document.getElementById("venue-name");
   const venuePlace = document.getElementById("venue-place");
@@ -333,8 +351,7 @@ function applyConfig(lang) {
   const footerDate = document.getElementById("footer-date");
   const footerVenue = document.getElementById("footer-venue");
 
-  if (heroGroom) heroGroom.textContent = pick(CONFIG.groomName, lang);
-  if (heroBride) heroBride.textContent = pick(CONFIG.brideName, lang);
+  if (heroCouple) heroCouple.textContent = pick(CONFIG.coupleName, lang);
   if (heroDate) heroDate.textContent = pick(CONFIG.heroDate, lang);
 
   if (venueName) venueName.textContent = pick(CONFIG.venueName, lang);
@@ -479,6 +496,7 @@ function initEnvelope() {
   const hint = document.getElementById("envelope-hint");
 
   bindLanguageToggle();
+  resetPageScroll();
 
   if (!overlay || !envelope || !waxSeal) return;
 
@@ -506,6 +524,7 @@ function initEnvelope() {
       overlay.classList.add("removed");
       overlay.setAttribute("aria-hidden", "true");
       document.body.classList.add("envelope-open");
+      resetPageScroll();
 
       if (mainContent) {
         mainContent.classList.remove("hidden");
@@ -513,6 +532,7 @@ function initEnvelope() {
       }
 
       initRevealAnimations(true);
+      requestAnimationFrame(() => resetPageScroll());
 
       setTimeout(() => {
         overlay.style.display = "none";
@@ -620,6 +640,9 @@ function initCountdown() {
       if (todayEl) todayEl.classList.remove("hidden");
       return;
     }
+
+    if (countdownEl) countdownEl.classList.remove("hidden");
+    if (todayEl) todayEl.classList.add("hidden");
 
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
