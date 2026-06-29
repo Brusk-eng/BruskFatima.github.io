@@ -54,6 +54,85 @@ img { max-width: 100%; height: auto; display: block; }
 
 .hidden { visibility: hidden; pointer-events: none; }
 
+/* ── Swan heart ornament (transparent PNG) ── */
+.swan-orn {
+  display: block;
+  width: clamp(56px, 15vw, 84px);
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  margin-inline: auto;
+  flex-shrink: 0;
+}
+
+.swan-orn-portal {
+  width: clamp(76px, 20vw, 104px);
+  opacity: 0.92;
+  filter: invert(79%) sepia(22%) saturate(520%) hue-rotate(6deg) brightness(108%) contrast(92%);
+}
+
+.swan-orn-gate {
+  width: clamp(40px, 11vw, 52px);
+  margin-bottom: 0.2rem;
+  opacity: 0.88;
+  filter: invert(79%) sepia(22%) saturate(520%) hue-rotate(6deg) brightness(108%) contrast(92%);
+}
+
+.swan-orn-hero {
+  width: clamp(52px, 13vw, 72px);
+  opacity: 0.85;
+  filter: invert(58%) sepia(18%) saturate(620%) hue-rotate(56deg) brightness(92%) contrast(88%);
+}
+
+.swan-orn-blessing {
+  width: clamp(44px, 11vw, 60px);
+  margin-bottom: 1.25rem;
+  opacity: 0.72;
+}
+
+.swan-orn-countdown {
+  width: clamp(40px, 10vw, 56px);
+  margin: -0.75rem auto 1.25rem;
+  opacity: 0.7;
+  filter: invert(79%) sepia(22%) saturate(520%) hue-rotate(6deg) brightness(108%) contrast(92%);
+}
+
+.swan-orn-venue {
+  width: clamp(40px, 10vw, 52px);
+  margin-bottom: 0.75rem;
+  opacity: 0.72;
+}
+
+.swan-orn-gift {
+  width: clamp(44px, 11vw, 60px);
+  margin-bottom: 0.75rem;
+  opacity: 0.72;
+}
+
+.swan-orn-footer {
+  width: clamp(40px, 10vw, 52px);
+  margin-bottom: 1rem;
+  opacity: 0.75;
+  filter: invert(79%) sepia(22%) saturate(520%) hue-rotate(6deg) brightness(108%) contrast(92%);
+}
+
+.swan-orn-ticket-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(96px, 26vw, 132px);
+  margin: 0;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.hero-divider {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
 .display {
   font-family: var(--font-display);
   font-weight: 400;
@@ -171,13 +250,20 @@ img { max-width: 100%; height: auto; display: block; }
   margin: auto;
 }
 
+.portal-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
 .portal-monogram {
   font-family: var(--font-display);
   font-size: 0.85rem;
   letter-spacing: 0.5em;
   color: var(--gold-light);
-  margin-bottom: 1rem;
-  opacity: 0.8;
+  opacity: 0.95;
 }
 
 .portal-couple {
@@ -599,15 +685,6 @@ img { max-width: 100%; height: auto; display: block; }
   word-break: break-word;
 }
 
-.hero-divider {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
-  color: var(--gold);
-  font-size: 0.6rem;
-  letter-spacing: 0.5em;
-}
-
 .hero-date {
   font-family: var(--font-serif);
   font-size: clamp(1rem, 2.5vw, 1.2rem);
@@ -834,8 +911,10 @@ img { max-width: 100%; height: auto; display: block; }
 
 .ticket-main {
   flex: 1;
+  position: relative;
   padding: 2rem 1.75rem;
   text-align: center;
+  overflow: hidden;
 }
 
 .ticket-eyebrow {
@@ -1066,14 +1145,6 @@ img { max-width: 100%; height: auto; display: block; }
   border: 1px solid rgba(168, 196, 212, 0.4);
   box-shadow: var(--shadow);
   border-radius: 4px;
-}
-
-.gift-orn {
-  display: block;
-  font-size: 1.25rem;
-  color: var(--blue-soft);
-  margin-bottom: 1rem;
-  opacity: 0.7;
 }
 
 .gift-text {
@@ -1371,7 +1442,19 @@ img { max-width: 100%; height: auto; display: block; }
   }
 
   .hero-divider {
-    letter-spacing: 0.25em;
+    margin-bottom: 0.85rem;
+  }
+
+  .swan-orn-hero {
+    width: clamp(44px, 11vw, 56px);
+  }
+
+  .swan-orn-portal {
+    width: clamp(48px, 14vw, 60px);
+  }
+
+  .swan-orn-gate {
+    width: clamp(32px, 9vw, 40px);
   }
 
   .hero-tagline {
