@@ -166,7 +166,7 @@ const TRANSLATIONS = {
     "nav.story": "چیرۆک",
     "nav.note": "نامە",
     "ticket.title": "بانگهێشتنامەکەت",
-    "hero.tagline": "پێکەوە، هەمیشەیی دەست پێ بکە",
+    "hero.tagline": "پێکەوە، هەمیشەیی دەستپێدەکات",
     "envelope.invited": "بانگهێشتکراویت",
     "envelope.hint": "مۆرەکە دابگرە بۆ کردنەوە",
     "envelope.openAria": "کردنەوەی بانگهێشتنامەی زەماوەند",
