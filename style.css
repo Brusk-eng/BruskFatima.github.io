@@ -968,29 +968,21 @@ img { max-width: 100%; height: auto; display: block; }
   box-shadow: 0 8px 24px rgba(90, 107, 72, 0.35);
 }
 
-/* ── Story horizontal scroll ── */
+/* ── Story grid ── */
 .chapter-story {
   background: var(--cream-warm);
-  overflow: hidden;
 }
 
 .story-scroll {
-  display: flex;
-  gap: 1.25rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-padding-inline: 1rem;
-  padding: 0.5rem max(1rem, env(safe-area-inset-right)) 1.5rem max(1rem, env(safe-area-inset-left));
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
 }
 
-.story-scroll::-webkit-scrollbar { display: none; }
-
 .story-card {
-  flex: 0 0 min(280px, 78vw);
-  scroll-snap-align: center;
-  padding: 2rem 1.75rem;
+  width: 100%;
+  padding: 1.5rem 1.35rem;
   background: var(--ivory);
   border: 1px solid rgba(90, 107, 72, 0.15);
   border-radius: 4px;
@@ -1257,12 +1249,19 @@ img { max-width: 100%; height: auto; display: block; }
   }
 
   .story-scroll {
-    justify-content: center;
-    overflow-x: visible;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
 
-  .story-card { flex: 0 0 calc(25% - 1rem); min-width: 200px; }
+  .story-card {
+    padding: 2rem 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .story-scroll {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 @media (max-width: 767px) {
@@ -1474,11 +1473,6 @@ img { max-width: 100%; height: auto; display: block; }
   .chapter-story .chapter-inner {
     max-width: 100%;
     width: 100%;
-  }
-
-  .story-card {
-    flex: 0 0 min(250px, 82vw);
-    padding: 1.35rem 1.15rem;
   }
 
   .gift-card {
