@@ -539,6 +539,9 @@ function initEnvelope() {
       window.magicBurst(rect.left + rect.width / 2, rect.top + rect.height / 2);
     }
 
+    // Start music immediately while the seal click gesture is active
+    void playWeddingMusic();
+
     overlay.classList.add("opening");
     envelope.classList.add("opening", "opened");
     waxSeal.setAttribute("aria-hidden", "true");
@@ -766,38 +769,76 @@ function initHeroParallax() {
    Music Player
    ============================================ */
 
+const weddingMusic = {
+  audio: null,
+  btn: null,
+  isPlaying: false,
+  musicAvailable: true
+};
+
+function setMusicPlayingUI(playing) {
+  const { btn } = weddingMusic;
+  if (!btn) return;
+  weddingMusic.isPlaying = playing;
+  btn.classList.toggle("playing", playing);
+  btn.setAttribute("aria-label", t(playing ? "controls.musicPauseAria" : "controls.musicPlayAria"));
+  btn.setAttribute("aria-pressed", playing ? "true" : "false");
+}
+
+function setMusicUnavailable() {
+  weddingMusic.musicAvailable = false;
+  if (weddingMusic.btn) {
+    weddingMusic.btn.classList.add("music-unavailable");
+    weddingMusic.btn.setAttribute("title", "Music unavailable");
+  }
+  setMusicPlayingUI(false);
+}
+
+async function playWeddingMusic() {
+  const { audio, btn } = weddingMusic;
+  if (!audio || !btn || !weddingMusic.musicAvailable || weddingMusic.isPlaying) return false;
+
+  try {
+    if (audio.readyState === 0) {
+      audio.load();
+    }
+    await audio.play();
+    setMusicPlayingUI(true);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function pauseWeddingMusic() {
+  const { audio } = weddingMusic;
+  if (!audio || !weddingMusic.isPlaying) return;
+  audio.pause();
+  setMusicPlayingUI(false);
+}
+
 function initMusic() {
   const btn = document.getElementById("music-btn");
   const audio = document.getElementById("wedding-music");
 
   if (!btn || !audio) return;
 
-  let isPlaying = false;
-  let musicAvailable = true;
+  weddingMusic.audio = audio;
+  weddingMusic.btn = btn;
 
-  audio.addEventListener("error", () => {
-    musicAvailable = false;
-  });
+  audio.addEventListener("error", setMusicUnavailable);
 
   btn.addEventListener("click", async () => {
-    if (!musicAvailable) return;
+    if (!weddingMusic.musicAvailable) return;
 
-    try {
-      if (isPlaying) {
-        audio.pause();
-        isPlaying = false;
-        btn.classList.remove("playing");
-        btn.setAttribute("aria-label", t("controls.musicPlayAria"));
-        btn.setAttribute("aria-pressed", "false");
-      } else {
-        await audio.play();
-        isPlaying = true;
-        btn.classList.add("playing");
-        btn.setAttribute("aria-label", t("controls.musicPauseAria"));
-        btn.setAttribute("aria-pressed", "true");
-      }
-    } catch {
-      musicAvailable = false;
+    if (weddingMusic.isPlaying) {
+      pauseWeddingMusic();
+      return;
+    }
+
+    const started = await playWeddingMusic();
+    if (!started) {
+      setMusicUnavailable();
     }
   });
 }
