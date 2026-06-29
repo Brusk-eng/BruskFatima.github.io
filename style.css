@@ -622,6 +622,22 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--olive-mid);
 }
 
+.lang-ku .hero-date,
+.lang-ar .hero-date,
+.lang-ku .hero-tagline,
+.lang-ar .hero-tagline,
+.lang-ku .portal-tagline,
+.lang-ar .portal-tagline,
+.lang-ku .venue-place,
+.lang-ar .venue-place,
+.lang-ku .ticket-event,
+.lang-ar .ticket-event,
+.lang-ku .countdown-today,
+.lang-ar .countdown-today {
+  font-family: "Noto Naskh Arabic", var(--font-body);
+  font-style: normal;
+}
+
 .scroll-cue {
   position: absolute;
   bottom: 2.5rem;
