@@ -7,447 +7,245 @@
   <title>Brusk & Fatima — Wedding Invitation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Italiana&family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Magic stardust trail layer -->
   <div class="magic-layer" id="magic-layer" aria-hidden="true"></div>
-  <!-- Magic shimmer sweep (language switch) -->
   <div class="magic-sweep" id="magic-sweep" aria-hidden="true"></div>
-
-  <!-- Language Choosing Splash -->
-  <div id="lang-splash" class="lang-splash" role="dialog" aria-modal="true" aria-label="Choose your language">
-    <div class="lang-splash-bg" aria-hidden="true"></div>
-    <div class="lang-splash-inner">
-      <span class="lang-splash-orn" aria-hidden="true">✦</span>
-      <p class="lang-splash-couple script-heading">Brusk &amp; Fatima</p>
-      <p class="lang-splash-sub">Choose your language</p>
-      <p class="lang-splash-sub lang-splash-sub-ku" lang="ckb" dir="rtl">زمانەکەت هەڵبژێرە</p>
-      <div class="lang-splash-buttons">
-        <button type="button" class="lang-choice" data-lang="en">
-          <span class="lang-choice-main">English</span>
-          <span class="lang-choice-sub">Continue in English</span>
-        </button>
-        <button type="button" class="lang-choice" data-lang="ku" lang="ckb" dir="rtl">
-          <span class="lang-choice-main">کوردی</span>
-          <span class="lang-choice-sub">بەردەوامبوون بە کوردی</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  
-  <!-- Envelope Opening -->
-  <div id="envelope-overlay" class="envelope-overlay envelope-hidden" aria-hidden="true">
-    <div class="envelope-vignette" aria-hidden="true"></div>
-    <div class="envelope-spotlight" aria-hidden="true"></div>
-    <div class="envelope-dust" id="envelope-dust" aria-hidden="true"></div>
-
-    <div class="envelope-scene">
-      <div class="envelope-crown" aria-hidden="true">
-        <span class="crown-line"></span>
-        <span class="crown-gem">◆</span>
-        <span class="crown-line"></span>
-      </div>
-
-      <div class="envelope-stage">
-        <div class="royal-parcel">
-          <div class="envelope" id="envelope">
-            <div class="envelope-back"></div>
-            <div class="envelope-liner" aria-hidden="true"></div>
-            <div class="envelope-gold-trim" aria-hidden="true"></div>
-
-            <div class="envelope-flap envelope-flap-left"><div class="flap-emboss"></div></div>
-            <div class="envelope-flap envelope-flap-right"><div class="flap-emboss"></div></div>
-            <div class="envelope-flap envelope-flap-bottom"><div class="flap-emboss"></div></div>
-            <div class="envelope-flap envelope-flap-top" id="envelope-flap-top"><div class="flap-emboss"></div></div>
-
-            <button type="button" class="wax-seal" id="wax-seal" aria-label="Open wedding invitation" data-i18n-aria="envelope.openAria">
-              <span class="seal-halo" aria-hidden="true"></span>
-              <span class="seal-rays" aria-hidden="true"></span>
-              <div class="wax-seal-inner">
-                <span class="wax-seal-text">B &amp; F</span>
-              </div>
-            </button>
-          </div>
-
-          <div class="invitation-card" id="envelope-paper">
-            <div class="card-texture" aria-hidden="true"></div>
-            <div class="card-shimmer" aria-hidden="true"></div>
-            <div class="card-frame">
-              <span class="card-corner card-corner-tl" aria-hidden="true"></span>
-              <span class="card-corner card-corner-tr" aria-hidden="true"></span>
-              <span class="card-corner card-corner-bl" aria-hidden="true"></span>
-              <span class="card-corner card-corner-br" aria-hidden="true"></span>
-              <div class="envelope-paper-inner">
-                <span class="paper-initials">B &amp; F</span>
-                <span class="paper-orn" aria-hidden="true">❧</span>
-                <span class="paper-sub" data-i18n="envelope.invited">You are invited</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p class="envelope-hint" id="envelope-hint" data-i18n="envelope.hint">Tap the seal to open</p>
-    </div>
-  </div>
-
-  <!-- Floating Petals & Sparkles -->
   <div class="ambient-layer" id="ambient-layer" aria-hidden="true"></div>
 
-  <!-- Floating Controls -->
+  <!-- ═══ ACT I · Language Portal ═══ -->
+  <div id="lang-splash" class="portal" role="dialog" aria-modal="true" aria-label="Choose your language">
+    <div class="portal-arch" aria-hidden="true">
+      <div class="portal-curtain portal-curtain-left"></div>
+      <div class="portal-curtain portal-curtain-right"></div>
+      <div class="portal-glow"></div>
+    </div>
+    <div class="portal-inner">
+      <div class="portal-monogram" aria-hidden="true">B · F</div>
+      <p class="portal-couple" id="portal-couple">Brusk &amp; Fatima</p>
+      <p class="portal-tagline" data-i18n="portal.tagline">A celebration of love</p>
+      <p class="portal-prompt" data-i18n="portal.choose">Choose your language</p>
+      <div class="portal-langs">
+        <button type="button" class="portal-lang" data-lang="en">
+          <span class="portal-lang-label">English</span>
+          <span class="portal-lang-sub">Continue in English</span>
+        </button>
+        <button type="button" class="portal-lang" data-lang="ku" lang="ckb" dir="rtl">
+          <span class="portal-lang-label">کوردی</span>
+          <span class="portal-lang-sub">بەردەوامبوون بە کوردی</span>
+        </button>
+        <button type="button" class="portal-lang" data-lang="ar" lang="ar" dir="rtl">
+          <span class="portal-lang-label">العربية</span>
+          <span class="portal-lang-sub">المتابعة بالعربية</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ACT II · The Olive Gates ═══ -->
+  <div id="gate-overlay" class="gate gate-hidden" aria-hidden="true">
+    <div class="gate-curtain gate-curtain-left" aria-hidden="true"></div>
+    <div class="gate-curtain gate-curtain-right" aria-hidden="true"></div>
+    <div class="gate-dust" id="gate-dust" aria-hidden="true"></div>
+    <div class="gate-scene">
+      <button type="button" class="gate-medallion" id="gate-seal" data-i18n-aria="gate.openAria">
+        <span class="gate-medallion-ring" aria-hidden="true"></span>
+        <span class="gate-medallion-inner">
+          <span class="gate-initials">B &amp; F</span>
+          <span class="gate-invited" data-i18n="gate.invited">You Are Invited</span>
+        </span>
+      </button>
+      <p class="gate-hint" id="gate-hint" data-i18n="gate.hint">Tap to enter the celebration</p>
+    </div>
+  </div>
+
+  <!-- Chapter navigation rail -->
+  <nav class="chapter-rail" id="chapter-rail" aria-label="Sections" hidden>
+    <a href="#hero" class="chapter-dot is-active" data-chapter="hero" aria-label="Home"><span class="chapter-dot-tip" data-i18n="nav.home">Home</span></a>
+    <a href="#blessing" class="chapter-dot" data-chapter="blessing" aria-label="Blessing"><span class="chapter-dot-tip" data-i18n="nav.blessing">Blessing</span></a>
+    <a href="#countdown-section" class="chapter-dot" data-chapter="countdown" aria-label="Countdown"><span class="chapter-dot-tip" data-i18n="nav.countdown">Countdown</span></a>
+    <a href="#event" class="chapter-dot" data-chapter="event" aria-label="Event"><span class="chapter-dot-tip" data-i18n="nav.event">Event</span></a>
+    <a href="#venue" class="chapter-dot" data-chapter="venue" aria-label="Venue"><span class="chapter-dot-tip" data-i18n="nav.venue">Venue</span></a>
+    <a href="#story" class="chapter-dot" data-chapter="story" aria-label="Story"><span class="chapter-dot-tip" data-i18n="nav.story">Story</span></a>
+    <a href="#gift" class="chapter-dot" data-chapter="gift" aria-label="Note"><span class="chapter-dot-tip" data-i18n="nav.note">Note</span></a>
+  </nav>
+
   <div class="floating-controls" id="floating-controls">
-    <!-- Language Toggle -->
-    <button
-      type="button"
-      class="lang-toggle"
-      id="lang-toggle"
-      aria-label="Switch language"
-      data-i18n-aria="controls.langAria"
-    >
-      <span class="lang-toggle-flag" id="lang-toggle-flag">کوردی</span>
+    <button type="button" class="fab fab-lang" id="lang-toggle" data-i18n-aria="controls.langAria">
+      <span id="lang-toggle-flag">کوردی</span>
     </button>
-    <!-- Music Button -->
-    <button
-      type="button"
-      class="music-btn"
-      id="music-btn"
-      aria-label="Play wedding music"
-      aria-pressed="false"
-      data-i18n-aria="controls.musicPlayAria"
-    >
-      <svg class="music-icon music-icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M8 5v14l11-7z"/>
-      </svg>
-      <svg class="music-icon music-icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-      </svg>
+    <button type="button" class="fab fab-music" id="music-btn" aria-pressed="false" data-i18n-aria="controls.musicPlayAria">
+      <svg class="music-icon music-icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      <svg class="music-icon music-icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
     </button>
   </div>
-  <!-- Wedding background music: assets/music.mp3 -->
+
   <audio id="wedding-music" loop preload="none">
     <source src="assets/music.mp3" type="audio/mpeg">
   </audio>
 
-  <main id="main-content" class="main-content hidden">
+  <!-- ═══ ACT III · The Celebration ═══ -->
+  <main id="main-content" class="palace hidden">
 
-    <!-- Hero Section — Midnight Opulence -->
-    <section class="hero" id="hero" aria-label="Wedding hero">
-      <div class="hero-canvas" id="hero-bg" aria-hidden="true">
-        <div class="hero-gradient"></div>
-        <div class="hero-shimmer"></div>
-        <div class="hero-chandelier" aria-hidden="true"></div>
-        <div class="hero-noise"></div>
-        <div class="hero-rays"></div>
-        <div class="hero-vignette"></div>
+    <!-- Hero -->
+    <section class="chapter chapter-hero" id="hero" data-chapter="hero">
+      <div class="hero-bg" id="hero-bg" aria-hidden="true">
+        <div class="hero-curtain hero-curtain-left"></div>
+        <div class="hero-curtain hero-curtain-right"></div>
+        <div class="hero-light"></div>
+        <div class="hero-petals" id="hero-petals" aria-hidden="true"></div>
       </div>
-
-      <div class="hero-frame" aria-hidden="true">
-        <span class="frame-corner frame-tl"></span>
-        <span class="frame-corner frame-tr"></span>
-        <span class="frame-corner frame-bl"></span>
-        <span class="frame-corner frame-br"></span>
-        <span class="frame-edge frame-top"></span>
-        <span class="frame-edge frame-bottom"></span>
-        <span class="frame-edge frame-left"></span>
-        <span class="frame-edge frame-right"></span>
-      </div>
-
-      <div class="hero-content reveal">
-        <div class="hero-ornament" aria-hidden="true">
-          <span class="orn-line"></span>
-          <span class="orn-gem">◆</span>
-          <span class="orn-line"></span>
-        </div>
-        <p class="hero-pre" data-i18n="hero.weddingDay">Wedding Day</p>
+      <div class="chapter-inner hero-inner reveal">
+        <p class="hero-eyebrow" data-i18n="hero.weddingDay">Wedding Day</p>
+        <h1 class="hero-names display" id="hero-couple">Brusk &amp; Fatima</h1>
+        <div class="hero-divider" aria-hidden="true"><span>✦</span></div>
         <p class="hero-date" id="hero-date">Thursday, 09 July 2026</p>
-        <div class="hero-monogram" aria-hidden="true">
-          <span class="mono-letter">B</span>
-          <span class="mono-amp">&amp;</span>
-          <span class="mono-letter">F</span>
-        </div>
-        <h1 class="hero-couple script-heading" id="hero-couple">Brusk &amp; Fatima</h1>
-        <div class="hero-foil-line" aria-hidden="true"></div>
+        <p class="hero-tagline" data-i18n="hero.tagline">Together, forever begins</p>
       </div>
-
-      <a href="#blessing" class="scroll-indicator" aria-label="Scroll down">
-        <span class="scroll-indicator-text" data-i18n="hero.scroll">Scroll Down</span>
-        <span class="scroll-indicator-line"></span>
+      <a href="#blessing" class="scroll-cue" aria-label="Scroll">
+        <span class="scroll-cue-line"></span>
+        <span class="scroll-cue-text" data-i18n="hero.scroll">Discover</span>
       </a>
     </section>
 
-    <!-- Islamic Blessing -->
-    <section class="section blessing" id="blessing" aria-label="Islamic blessing">
-      <div class="container reveal">
-        <p class="arabic-blessing" dir="rtl" lang="ar">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-        <div class="blessing-verse">
-          <p class="script-heading" data-i18n="blessing.soul1">Two Souls</p>
-          <p class="script-heading" data-i18n="blessing.soul2">One Destiny</p>
-          <p class="blessing-sub" data-i18n="blessing.sub">A Lifetime Written by Allah</p>
-        </div>
-        <div class="blessing-message">
-          <p data-i18n="blessing.dear">Dear Family &amp; Friends,</p>
-          <p data-i18n="blessing.msg1">With gratitude to Allah, we warmly invite you to celebrate the beginning of our forever.</p>
-          <p data-i18n="blessing.msg2">Your love, prayers, and presence will make this day truly unforgettable.</p>
+    <!-- Blessing -->
+    <section class="chapter chapter-blessing" id="blessing" data-chapter="blessing">
+      <div class="chapter-inner reveal">
+        <div class="blessing-frame">
+          <p class="bismillah" dir="rtl" lang="ar">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+          <div class="blessing-verse">
+            <p class="display display-sm" data-i18n="blessing.soul1">Two Souls</p>
+            <p class="display display-sm" data-i18n="blessing.soul2">One Destiny</p>
+            <p class="blessing-sub" data-i18n="blessing.sub">A Lifetime Written by Allah</p>
+          </div>
+          <div class="blessing-body">
+            <p data-i18n="blessing.dear">Dear Family &amp; Friends,</p>
+            <p data-i18n="blessing.msg1">With gratitude to Allah, we warmly invite you to celebrate the beginning of our forever.</p>
+            <p data-i18n="blessing.msg2">Your love, prayers, and presence will make this day truly unforgettable.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Countdown -->
-    <section class="section countdown-section" id="countdown-section" aria-label="Countdown timer">
-      <div class="container reveal">
-        <h2 class="section-title" data-i18n="countdown.title">The Celebration Begins In</h2>
-        <div class="countdown" id="countdown" role="timer" aria-live="polite">
-          <div class="countdown-box">
-            <span class="countdown-num" id="count-days">00</span>
-            <span class="countdown-label" data-i18n="countdown.days">Days</span>
+    <section class="chapter chapter-countdown" id="countdown-section" data-chapter="countdown">
+      <div class="chapter-inner reveal">
+        <h2 class="chapter-label" data-i18n="countdown.title">The Celebration Begins In</h2>
+        <div class="countdown-orbit" id="countdown" role="timer" aria-live="polite">
+          <div class="orbit-ring" aria-hidden="true"></div>
+          <div class="orbit-cell">
+            <span class="orbit-num" id="count-days">00</span>
+            <span class="orbit-label" data-i18n="countdown.days">Days</span>
           </div>
-          <div class="countdown-box">
-            <span class="countdown-num" id="count-hours">00</span>
-            <span class="countdown-label" data-i18n="countdown.hours">Hours</span>
+          <div class="orbit-cell">
+            <span class="orbit-num" id="count-hours">00</span>
+            <span class="orbit-label" data-i18n="countdown.hours">Hours</span>
           </div>
-          <div class="countdown-box">
-            <span class="countdown-num" id="count-minutes">00</span>
-            <span class="countdown-label" data-i18n="countdown.minutes">Minutes</span>
+          <div class="orbit-cell">
+            <span class="orbit-num" id="count-minutes">00</span>
+            <span class="orbit-label" data-i18n="countdown.minutes">Minutes</span>
           </div>
-          <div class="countdown-box">
-            <span class="countdown-num" id="count-seconds">00</span>
-            <span class="countdown-label" data-i18n="countdown.seconds">Seconds</span>
+          <div class="orbit-cell">
+            <span class="orbit-num" id="count-seconds">00</span>
+            <span class="orbit-label" data-i18n="countdown.seconds">Seconds</span>
           </div>
         </div>
         <p class="countdown-today hidden" id="countdown-today" data-i18n="countdown.today">Today is the day.</p>
       </div>
     </section>
 
-    <!-- Schedule -->
-    <section class="section schedule" id="schedule" aria-label="Schedule of events">
-      <div class="container reveal">
-        <h2 class="section-title" data-i18n="schedule.title">Schedule of Events</h2>
-        <div class="timeline" id="timeline">
-          <div class="timeline-line" aria-hidden="true"></div>
-          <article class="timeline-item reveal-child">
-            <div class="timeline-marker"><span class="diamond"></span></div>
-            <div class="timeline-content">
-              <time class="timeline-time">7:00 PM</time>
-              <h3 class="timeline-title" data-i18n="schedule.s1">Guest Arrival</h3>
-            </div>
-          </article>
-          <article class="timeline-item reveal-child">
-            <div class="timeline-marker"><span class="diamond"></span><span class="rose-icon" aria-hidden="true">✿</span></div>
-            <div class="timeline-content">
-              <time class="timeline-time">8:00 PM</time>
-              <h3 class="timeline-title" data-i18n="schedule.s2">Bride &amp; Groom Grand Entrance</h3>
-            </div>
-          </article>
-          <article class="timeline-item reveal-child">
-            <div class="timeline-marker"><span class="diamond"></span></div>
-            <div class="timeline-content">
-              <time class="timeline-time">8:15 PM</time>
-              <h3 class="timeline-title" data-i18n="schedule.s3">Dinner Service</h3>
-            </div>
-          </article>
-          <article class="timeline-item reveal-child">
-            <div class="timeline-marker"><span class="diamond"></span></div>
-            <div class="timeline-content">
-              <time class="timeline-time">9:00 PM</time>
-              <h3 class="timeline-title" data-i18n="schedule.s4">Cake Cutting</h3>
-            </div>
-          </article>
-          <article class="timeline-item reveal-child">
-            <div class="timeline-marker"><span class="diamond"></span></div>
-            <div class="timeline-content">
-              <time class="timeline-time">9:30 PM</time>
-              <h3 class="timeline-title" data-i18n="schedule.s5">First Dance</h3>
-            </div>
-          </article>
-          <article class="timeline-item reveal-child">
-            <div class="timeline-marker"><span class="diamond"></span></div>
-            <div class="timeline-content">
-              <time class="timeline-time">10:00 PM</time>
-              <h3 class="timeline-title" data-i18n="schedule.s6">Celebration &amp; Photography</h3>
-            </div>
-          </article>
-          <article class="timeline-item reveal-child">
-            <div class="timeline-marker"><span class="diamond"></span></div>
-            <div class="timeline-content">
-              <time class="timeline-time">11:30 PM</time>
-              <h3 class="timeline-title" data-i18n="schedule.s7">Closing Ceremony</h3>
-            </div>
-          </article>
-        </div>
+    <!-- Event ticket -->
+    <section class="chapter chapter-event" id="event" data-chapter="event">
+      <div class="chapter-inner reveal">
+        <h2 class="chapter-label" data-i18n="ticket.title">Your Invitation</h2>
+        <article class="event-ticket">
+          <div class="ticket-stub" aria-hidden="true">
+            <span class="ticket-stub-text">BF</span>
+            <span class="ticket-stub-line"></span>
+            <span class="ticket-stub-text">2026</span>
+          </div>
+          <div class="ticket-main">
+            <p class="ticket-eyebrow" data-i18n="schedule.title">Schedule</p>
+            <time class="ticket-time" datetime="19:00">7:00 PM</time>
+            <h3 class="ticket-event" data-i18n="schedule.s1">Guest Arrival</h3>
+            <p class="ticket-venue" id="ticket-venue">Divan Erbil Hotel · Grand Ballroom</p>
+            <p class="ticket-date" id="ticket-date">Thursday, 09 July 2026</p>
+          </div>
+        </article>
       </div>
     </section>
 
     <!-- Venue -->
-    <section class="section venue" id="venue" aria-label="Venue information">
-      <div class="container reveal">
-        <h2 class="section-title" data-i18n="venue.title">Venue</h2>
-        <div class="venue-card">
-          <figure class="venue-photo">
-            <div class="venue-photo-frame">
-              <img
-                src="assets/divan-erbil-hotel.jpg"
-                alt="Divan Erbil Hotel exterior"
-                class="venue-hotel-image"
-                loading="lazy"
-                width="932"
-                height="768"
-              >
-              <span class="venue-photo-shine" aria-hidden="true"></span>
-            </div>
-            <figcaption class="venue-photo-credit">Divan Erbil Hotel</figcaption>
-          </figure>
-          <div class="venue-info">
-            <h3 class="venue-name" id="venue-name">Divan Erbil Hotel</h3>
-            <p class="venue-place" id="venue-place">Grand Ballroom</p>
-            <address class="venue-address" id="venue-address">
-              Divan Erbil Hotel<br>
-              Gulan Street<br>
-              Erbil<br>
-              Kurdistan Region<br>
-              Iraq
-            </address>
-          </div>
+    <section class="chapter chapter-venue" id="venue" data-chapter="venue">
+      <div class="venue-hero reveal">
+        <figure class="venue-panorama">
+          <img src="assets/divan-erbil-hotel.jpg" alt="Divan Erbil Hotel exterior" class="venue-img" loading="lazy" width="932" height="768">
+          <figcaption class="venue-caption">Divan Erbil Hotel</figcaption>
+        </figure>
+        <div class="venue-overlay-card reveal-child">
+          <h2 class="chapter-label" data-i18n="venue.title">Venue</h2>
+          <h3 class="venue-name" id="venue-name">Divan Erbil Hotel</h3>
+          <p class="venue-place" id="venue-place">Grand Ballroom</p>
+          <address class="venue-address" id="venue-address">
+            Divan Erbil Hotel<br>Gulan Street<br>Erbil<br>Kurdistan Region<br>Iraq
+          </address>
+          <a href="#" class="btn btn-primary" id="map-btn" target="_blank" rel="noopener noreferrer" data-i18n="venue.maps">Open in Google Maps</a>
         </div>
-        <div class="venue-map">
-          <iframe
-            id="map-iframe"
-            title="Venue location map"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <a href="#" class="btn btn-gold" id="map-btn" target="_blank" rel="noopener noreferrer" data-i18n="venue.maps">
-          Open in Google Maps
-        </a>
+      </div>
+      <div class="venue-map-wrap reveal">
+        <iframe id="map-iframe" title="Venue location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </section>
 
-    <!-- Our Story -->
-    <section class="section story" id="story" aria-label="Our story">
-      <div class="container reveal">
-        <h2 class="section-title" data-i18n="story.title">Our Story</h2>
-        <div class="story-timeline">
-          <article class="story-item reveal-child">
-            <div class="story-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="16" r="8"/><path d="M8 44c0-8 7-14 16-14s16 6 16 14"/></svg>
-            </div>
-            <div class="story-text">
-              <h3 data-i18n="story.s1t">First Meeting</h3>
-              <p data-i18n="story.s1p">Where it all began.</p>
-            </div>
+    <!-- Story -->
+    <section class="chapter chapter-story" id="story" data-chapter="story">
+      <div class="chapter-inner">
+        <h2 class="chapter-label reveal" data-i18n="story.title">Our Story</h2>
+        <div class="story-scroll" id="story-scroll">
+          <article class="story-card reveal-child">
+            <span class="story-num">01</span>
+            <h3 data-i18n="story.s1t">First Meeting</h3>
+            <p data-i18n="story.s1p">Where it all began.</p>
           </article>
-          <article class="story-item reveal-child">
-            <div class="story-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 42l-2-2C12 26 6 20 6 14a6 6 0 0112 0c0 2 2 4 4 6 2-2 4-4 4-6a6 6 0 0112 0c0 6-6 12-16 24l-2 2z"/></svg>
-            </div>
-            <div class="story-text">
-              <h3 data-i18n="story.s2t">Engagement</h3>
-              <p data-i18n="story.s2p">The promise of forever.</p>
-            </div>
+          <article class="story-card reveal-child">
+            <span class="story-num">02</span>
+            <h3 data-i18n="story.s2t">Engagement</h3>
+            <p data-i18n="story.s2p">The promise of forever.</p>
           </article>
-          <article class="story-item reveal-child">
-            <div class="story-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 20l16-12 16 12v20H8V20z"/><rect x="18" y="28" width="12" height="12"/></svg>
-            </div>
-            <div class="story-text">
-              <h3 data-i18n="story.s3t">Wedding Day</h3>
-              <p data-i18n="story.s3p">The beginning of our new chapter.</p>
-            </div>
+          <article class="story-card reveal-child">
+            <span class="story-num">03</span>
+            <h3 data-i18n="story.s3t">Wedding Day</h3>
+            <p data-i18n="story.s3p">The beginning of our new chapter.</p>
           </article>
-          <article class="story-item reveal-child">
-            <div class="story-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 4l4 12h12l-10 8 4 12-10-8-10 8 4-12-10-8h12z"/></svg>
-            </div>
-            <div class="story-text">
-              <h3 data-i18n="story.s4t">Forever Begins</h3>
-              <p data-i18n="story.s4p">A lifetime written by Allah.</p>
-            </div>
+          <article class="story-card reveal-child">
+            <span class="story-num">04</span>
+            <h3 data-i18n="story.s4t">Forever Begins</h3>
+            <p data-i18n="story.s4p">A lifetime written by Allah.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- RSVP -->
-    <section class="section rsvp" id="rsvp" aria-label="RSVP form">
-      <div class="container reveal">
-        <h2 class="section-title" data-i18n="rsvp.title">RSVP</h2>
-        <p class="section-subtitle" data-i18n="rsvp.subtitle">Kindly confirm your attendance.</p>
-        <form class="rsvp-form" id="rsvp-form" novalidate>
-          <div class="form-group">
-            <label for="rsvp-name" data-i18n="rsvp.name">Full Name</label>
-            <input type="text" id="rsvp-name" name="name" required placeholder="Your full name" data-i18n-placeholder="rsvp.namePh" autocomplete="name">
-          </div>
-          <div class="form-group">
-            <label for="rsvp-phone" data-i18n="rsvp.phone">Phone Number</label>
-            <input type="tel" id="rsvp-phone" name="phone" required placeholder="Your phone number" data-i18n-placeholder="rsvp.phonePh" autocomplete="tel">
-          </div>
-          <div class="form-group">
-            <label for="rsvp-guests" data-i18n="rsvp.guests">Number of Guests</label>
-            <input type="number" id="rsvp-guests" name="guests" required min="1" max="20" placeholder="1" value="1">
-          </div>
-          <div class="form-group">
-            <span class="label-text" data-i18n="rsvp.attend">Will Attend?</span>
-            <div class="radio-group" role="radiogroup" aria-label="Will attend">
-              <label class="radio-label">
-                <input type="radio" name="attend" value="Yes" required checked>
-                <span data-i18n="rsvp.yes">Yes</span>
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="attend" value="No">
-                <span data-i18n="rsvp.no">No</span>
-              </label>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="rsvp-message" data-i18n="rsvp.message">Message / Dua</label>
-            <textarea id="rsvp-message" name="message" rows="4" placeholder="Share your wishes or dua" data-i18n-placeholder="rsvp.messagePh"></textarea>
-          </div>
-          <button type="submit" class="btn btn-gold btn-full" data-i18n="rsvp.submit">Send RSVP via WhatsApp</button>
-          <p class="form-note" data-i18n="rsvp.note">Your RSVP will be sent through WhatsApp.</p>
-        </form>
-      </div>
-    </section>
-
-    <!-- Dress Code -->
-    <section class="section dress-code" id="dress-code" aria-label="Dress code">
-      <div class="container reveal">
-        <h2 class="section-title" data-i18n="dress.title">Dress Code</h2>
-        <p class="dress-main script-heading" data-i18n="dress.main">Elegant Formal</p>
-        <div class="dress-details">
-          <div class="dress-item">
-            <h3 data-i18n="dress.ladies">Ladies</h3>
-            <p data-i18n="dress.ladiesVal">Evening Dresses</p>
-          </div>
-          <div class="dress-divider" aria-hidden="true"></div>
-          <div class="dress-item">
-            <h3 data-i18n="dress.gentlemen">Gentlemen</h3>
-            <p data-i18n="dress.gentlemenVal">Suit or Formal Attire</p>
-          </div>
+    <!-- Gift note -->
+    <section class="chapter chapter-gift" id="gift" data-chapter="gift">
+      <div class="chapter-inner reveal">
+        <div class="gift-card">
+          <span class="gift-orn" aria-hidden="true">❧</span>
+          <h2 class="chapter-label" data-i18n="gift.title">A Small Note</h2>
+          <p class="gift-text" data-i18n="gift.text">Your love, prayers, and presence are the greatest gifts we could ever receive.</p>
+          <p class="gift-sign display display-sm" data-i18n="footer.love">With Love</p>
+          <p class="gift-names" id="footer-names">Brusk &amp; Fatima</p>
         </div>
-        <p class="dress-note" data-i18n="dress.note">Soft colors and classic styles are warmly appreciated.</p>
       </div>
     </section>
 
-    <!-- Gift Note -->
-    <section class="section gift" id="gift" aria-label="Gift note">
-      <div class="container reveal">
-        <h2 class="section-title" data-i18n="gift.title">A Small Note</h2>
-        <p class="gift-text" data-i18n="gift.text">Your love, prayers, and presence are the greatest gifts we could ever receive.</p>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer" aria-label="Footer">
-      <div class="container">
-        <p class="footer-love script-heading" data-i18n="footer.love">With Love</p>
-        <p class="footer-names" id="footer-names">Brusk &amp; Fatima</p>
-        <p class="footer-date" id="footer-date">Thursday, 09 July 2026</p>
-        <p class="footer-venue" id="footer-venue">Divan Erbil Hotel Grand Ballroom</p>
-      </div>
+    <footer class="palace-footer">
+      <p class="footer-date" id="footer-date">Thursday, 09 July 2026</p>
+      <p class="footer-venue" id="footer-venue">Divan Erbil Hotel Grand Ballroom</p>
+      <p class="footer-monogram" aria-hidden="true">B · F</p>
     </footer>
 
   </main>

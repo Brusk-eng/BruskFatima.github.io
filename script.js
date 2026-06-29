@@ -1,8 +1,8 @@
 /**
- * Brusk & Fatima Wedding Invitation — Bilingual (English / Kurdish Sorani)
+ * Brusk & Fatima Wedding Invitation — Trilingual (English / Kurdish / Arabic)
  * =======================================================================
  * Edit the CONFIG object below to customize names, date, venue, map, WhatsApp.
- * Each text field supports two languages: { en: "...", ku: "..." }.
+ * Each text field supports three languages: { en: "...", ku: "...", ar: "..." }.
  * Replace music file at: assets/music.mp3
  */
 
@@ -24,24 +24,33 @@ window.addEventListener("pageshow", (event) => {
 });
 
 const CONFIG = {
-  // Couple names (en = Latin, ku = Kurdish Sorani script)
-  groomName: { en: "Brusk", ku: "بروسک" },
-  brideName: { en: "Fatima", ku: "فاتیمە" },
-  coupleName: { en: "Brusk & Fatima", ku: "بروسک و فاتیمە" },
+  // Couple names
+  groomName: { en: "Brusk", ku: "بروسک", ar: "بروسك" },
+  brideName: { en: "Fatima", ku: "فاتیمە", ar: "فاطمة" },
+  coupleName: { en: "Brusk & Fatima", ku: "بروسک و فاتیمە", ar: "بروسك & فاطمة" },
 
   // Dates (shown text only — the live countdown uses countdownDate below)
-  weddingDateText: { en: "Thursday, 09 July 2026", ku: "پێنجشەممە، ٩ی تەمموزی ٢٠٢٦" },
-  heroDate: { en: "Thursday, 09 July 2026", ku: "پێنجشەممە، ٩ی تەمموزی ٢٠٢٦" },
+  weddingDateText: {
+    en: "Thursday, 09 July 2026",
+    ku: "پێنجشەممە، ٩ی تەمموزی ٢٠٢٦",
+    ar: "الخميس، ٩ تموز ٢٠٢٦"
+  },
+  heroDate: {
+    en: "Thursday, 09 July 2026",
+    ku: "پێنجشەممە، ٩ی تەمموزی ٢٠٢٦",
+    ar: "الخميس، ٩ تموز ٢٠٢٦"
+  },
 
   // Live countdown target (ISO 8601 with Asia/Baghdad offset +03:00)
   countdownDate: "2026-07-09T19:00:00+03:00",
 
   // Venue
-  venueName: { en: "Divan Erbil Hotel", ku: "هۆتێلی دیڤان هەولێر" },
-  venuePlace: { en: "Grand Ballroom", ku: "هۆڵی ئاهەنگی گەورە" },
+  venueName: { en: "Divan Erbil Hotel", ku: "هۆتێلی دیڤان هەولێر", ar: "فندق ديفان أربيل" },
+  venuePlace: { en: "Grand Ballroom", ku: "هۆڵی ئاهەنگی گەورە", ar: "القاعة الكبرى" },
   venueAddressLines: {
     en: ["Divan Erbil Hotel", "Gulan Street", "Erbil", "Kurdistan Region", "Iraq"],
-    ku: ["هۆتێلی دیڤان هەولێر", "شەقامی گوڵان", "هەولێر", "هەرێمی کوردستان", "عێراق"]
+    ku: ["هۆتێلی دیڤان هەولێر", "شەقامی گوڵان", "هەولێر", "هەرێمی کوردستان", "عێراق"],
+    ar: ["فندق ديفان أربيل", "شارع گulan", "أربيل", "إقليم كردستان", "العراق"]
   },
 
   // Google Maps — easy to replace
@@ -57,15 +66,29 @@ const CONFIG = {
 
 const TRANSLATIONS = {
   en: {
+    "portal.tagline": "A celebration of love",
+    "portal.choose": "Choose your language",
+    "gate.invited": "You Are Invited",
+    "gate.hint": "Tap to enter the celebration",
+    "gate.openAria": "Open wedding invitation",
+    "nav.home": "Home",
+    "nav.blessing": "Blessing",
+    "nav.countdown": "Countdown",
+    "nav.event": "Event",
+    "nav.venue": "Venue",
+    "nav.story": "Story",
+    "nav.note": "Note",
+    "ticket.title": "Your Invitation",
+    "hero.tagline": "Together, forever begins",
     "envelope.invited": "You are invited",
     "envelope.hint": "Tap the seal to open",
     "envelope.openAria": "Open wedding invitation",
-    "controls.langAria": "Switch language to Kurdish",
+    "controls.langAria": "Switch language",
     "controls.musicPlayAria": "Play wedding music",
     "controls.musicPauseAria": "Pause wedding music",
     "hero.weddingDay": "Wedding Day",
     "hero.thursday": "Thursday",
-    "hero.scroll": "Scroll Down",
+    "hero.scroll": "Discover",
     "blessing.soul1": "Two Souls",
     "blessing.soul2": "One Destiny",
     "blessing.sub": "A Lifetime Written by Allah",
@@ -130,15 +153,29 @@ const TRANSLATIONS = {
     "wa.message": "Message"
   },
   ku: {
+    "portal.tagline": "ئاهەنگێکی خۆشەویستی",
+    "portal.choose": "زمانەکەت هەڵبژێرە",
+    "gate.invited": "بانگهێشتکراویت",
+    "gate.hint": "دابگرە بۆ چوونە ناو ئاهەنگەکە",
+    "gate.openAria": "کردنەوەی بانگهێشتنامەی زەماوەند",
+    "nav.home": "سەرەتا",
+    "nav.blessing": "بەخت",
+    "nav.countdown": "کاتژمێر",
+    "nav.event": "بەرنامە",
+    "nav.venue": "شوێن",
+    "nav.story": "چیرۆک",
+    "nav.note": "نامە",
+    "ticket.title": "بانگهێشتنامەکەت",
+    "hero.tagline": "پێکەوە، هەمیشەیی دەستپێدەکات",
     "envelope.invited": "بانگهێشتکراویت",
     "envelope.hint": "مۆرەکە دابگرە بۆ کردنەوە",
     "envelope.openAria": "کردنەوەی بانگهێشتنامەی زەماوەند",
-    "controls.langAria": "گۆڕینی زمان بۆ ئینگلیزی",
+    "controls.langAria": "گۆڕینی زمان",
     "controls.musicPlayAria": "لێدانی مۆسیقای زەماوەند",
     "controls.musicPauseAria": "ڕاگرتنی مۆسیقا",
     "hero.weddingDay": "ڕۆژی هاوسەرگیری",
     "hero.thursday": "پێنجشەممە",
-    "hero.scroll": "بەرەوخوار بڕۆ",
+    "hero.scroll": "ببینە",
     "blessing.soul1": "دوو ڕۆح",
     "blessing.soul2": "یەک چارەنووس",
     "blessing.sub": "ژیانێک کە خودا نووسیویەتی",
@@ -200,7 +237,101 @@ const TRANSLATIONS = {
     "wa.guests": "میوان",
     "wa.attending": "ئامادەبوون",
     "wa.message": "نامە"
+  },
+  ar: {
+    "portal.tagline": "احتفال بالحب",
+    "portal.choose": "اختر لغتك",
+    "gate.invited": "أنتم مدعوون",
+    "gate.hint": "اضغط للدخول إلى الاحتفال",
+    "gate.openAria": "فتح دعوة الزفاف",
+    "nav.home": "الرئيسية",
+    "nav.blessing": "الدعاء",
+    "nav.countdown": "العد",
+    "nav.event": "المناسبة",
+    "nav.venue": "المكان",
+    "nav.story": "القصة",
+    "nav.note": "كلمة",
+    "ticket.title": "دعوتكم",
+    "hero.tagline": "معاً، يبدأ الأبد",
+    "envelope.invited": "أنتم مدعوون",
+    "envelope.hint": "اضغط على الختم للفتح",
+    "envelope.openAria": "فتح دعوة الزفاف",
+    "controls.langAria": "تغيير اللغة",
+    "controls.musicPlayAria": "تشغيل موسيقى الزفاف",
+    "controls.musicPauseAria": "إيقاف الموسيقى",
+    "hero.weddingDay": "يوم العرس",
+    "hero.thursday": "الخميس",
+    "hero.scroll": "اكتشف",
+    "blessing.soul1": "روحان",
+    "blessing.soul2": "قدر واحد",
+    "blessing.sub": "حياة كتبها الله",
+    "blessing.dear": "أعزّائنا من العائلة والأصدقاء،",
+    "blessing.msg1": "بحمد الله، ندعوكم بكل حب للاحتفال ببداية حياتنا الأبدية.",
+    "blessing.msg2": "حبكم ودعواتكم وحضوركم سيجعل هذا اليوم لا يُنسى.",
+    "countdown.title": "يبدأ الاحتفال بعد",
+    "countdown.days": "يوم",
+    "countdown.hours": "ساعة",
+    "countdown.minutes": "دقيقة",
+    "countdown.seconds": "ثانية",
+    "countdown.today": "اليوم هو يوم العرس.",
+    "schedule.title": "جدول المناسبة",
+    "schedule.s1": "استقبال الضيوف",
+    "schedule.s2": "دخول العروسين",
+    "schedule.s3": "تقديم العشاء",
+    "schedule.s4": "تقطيع الكيك",
+    "schedule.s5": "الرقصة الأولى",
+    "schedule.s6": "الاحتفال والتصوير",
+    "schedule.s7": "ختام المناسبة",
+    "venue.title": "المكان",
+    "venue.maps": "فتح في خرائط Google",
+    "story.title": "قصتنا",
+    "story.s1t": "اللقاء الأول",
+    "story.s1p": "من هنا بدأ كل شيء.",
+    "story.s2t": "الخطوبة",
+    "story.s2p": "وعد الأبدية.",
+    "story.s3t": "يوم العرس",
+    "story.s3p": "بداية فصل جديد من حياتنا.",
+    "story.s4t": "يبدأ الأبد",
+    "story.s4p": "حياة كتبها الله.",
+    "rsvp.title": "تأكيد الحضور",
+    "rsvp.subtitle": "يرجى تأكيد حضوركم.",
+    "rsvp.name": "الاسم الكامل",
+    "rsvp.namePh": "اكتب اسمك الكامل",
+    "rsvp.phone": "رقم الهاتف",
+    "rsvp.phonePh": "اكتب رقم هاتفك",
+    "rsvp.guests": "عدد الضيوف",
+    "rsvp.attend": "هل ستحضر؟",
+    "rsvp.yes": "نعم",
+    "rsvp.no": "لا",
+    "rsvp.message": "رسالة / دعاء",
+    "rsvp.messagePh": "اكتب أمنياتك أو دعاءك",
+    "rsvp.submit": "إرسال التأكيد عبر واتساب",
+    "rsvp.note": "سيتم إرسال تأكيدك عبر واتساب.",
+    "dress.title": "اللباس",
+    "dress.main": "رسمي أنيق",
+    "dress.ladies": "السيدات",
+    "dress.ladiesVal": "فساتين سهرة",
+    "dress.gentlemen": "الرجال",
+    "dress.gentlemenVal": "بدلة أو لباس رسمي",
+    "dress.note": "الألوان الهادئة والأناقة الكلاسيكية موضع تقدير.",
+    "gift.title": "كلمة صغيرة",
+    "gift.text": "حبكم ودعواتكم وحضوركم أغلى هدية نتمنىها.",
+    "footer.love": "مع المحبة",
+    "wa.header": "تأكيد حضور العرس",
+    "wa.name": "الاسم",
+    "wa.phone": "الهاتف",
+    "wa.guests": "الضيوف",
+    "wa.attending": "الحضور",
+    "wa.message": "الرسالة"
   }
+};
+
+const SUPPORTED_LANGS = ["en", "ku", "ar"];
+
+const LANG_META = {
+  en: { htmlLang: "en", dir: "ltr", bodyClass: "lang-en", next: "ku", toggleLabel: "کوردی" },
+  ku: { htmlLang: "ckb", dir: "rtl", bodyClass: "lang-ku", next: "ar", toggleLabel: "عربي" },
+  ar: { htmlLang: "ar-IQ", dir: "rtl", bodyClass: "lang-ar", next: "en", toggleLabel: "EN" }
 };
 
 const LANG_STORAGE_KEY = "bf-wedding-lang";
@@ -228,15 +359,14 @@ document.addEventListener("DOMContentLoaded", () => {
   resetPageScroll();
   initLanguage();
   initLanguageSplash();
-  initEnvelope();
-  initEnvelopeDust();
+  initGate();
+  initGateDust();
   initAmbient();
   initMagicStardust();
   initCountdown();
   initRevealAnimations();
-  initHeroParallax();
+  initChapterRail();
   initMusic();
-  initRSVP();
 });
 
 /* ============================================
@@ -250,21 +380,22 @@ function initLanguage() {
   } catch {
     saved = null;
   }
-  if (saved === "en" || saved === "ku") {
+  if (saved && SUPPORTED_LANGS.includes(saved)) {
     currentLang = saved;
   }
   applyLanguage(currentLang, { skipSweep: true });
 }
 
 function applyLanguage(lang, options = {}) {
-  currentLang = lang === "ku" ? "ku" : "en";
+  currentLang = SUPPORTED_LANGS.includes(lang) ? lang : "en";
+  const meta = LANG_META[currentLang];
 
   const html = document.documentElement;
-  html.setAttribute("lang", currentLang === "ku" ? "ckb" : "en");
-  html.setAttribute("dir", currentLang === "ku" ? "rtl" : "ltr");
+  html.setAttribute("lang", meta.htmlLang);
+  html.setAttribute("dir", meta.dir);
 
-  document.body.classList.toggle("lang-ku", currentLang === "ku");
-  document.body.classList.toggle("lang-en", currentLang === "en");
+  document.body.classList.remove("lang-en", "lang-ku", "lang-ar");
+  document.body.classList.add(meta.bodyClass);
 
   // Static text
   document.querySelectorAll("[data-i18n]").forEach((el) => {
@@ -284,9 +415,9 @@ function applyLanguage(lang, options = {}) {
     el.setAttribute("aria-label", t(key));
   });
 
-  // Language toggle shows the OTHER language label
+  // Language toggle cycles en → ku → ar → en
   const flag = document.getElementById("lang-toggle-flag");
-  if (flag) flag.textContent = currentLang === "ku" ? "EN" : "کوردی";
+  if (flag) flag.textContent = meta.toggleLabel;
 
   // Dynamic config-driven text
   applyConfig(currentLang);
@@ -303,23 +434,22 @@ function applyLanguage(lang, options = {}) {
 
 function initLanguageSplash() {
   const splash = document.getElementById("lang-splash");
-  const overlay = document.getElementById("envelope-overlay");
+  const overlay = document.getElementById("gate-overlay");
   if (!splash) return;
 
-  const choices = splash.querySelectorAll(".lang-choice");
-  choices.forEach((btn) => {
+  splash.querySelectorAll(".portal-lang, .lang-choice").forEach((btn) => {
     btn.addEventListener("click", () => {
       const lang = btn.getAttribute("data-lang");
       applyLanguage(lang, { skipSweep: true });
-      revealEnvelope();
+      revealGate();
     });
   });
 
-  function revealEnvelope() {
+  function revealGate() {
     resetPageScroll();
     splash.classList.add("dismissed");
     if (overlay) {
-      overlay.classList.remove("envelope-hidden");
+      overlay.classList.remove("gate-hidden");
       overlay.setAttribute("aria-hidden", "false");
     }
     triggerMagicSweep();
@@ -342,6 +472,7 @@ function pick(field, lang) {
 
 function applyConfig(lang) {
   const heroCouple = document.getElementById("hero-couple");
+  const portalCouple = document.getElementById("portal-couple");
   const heroDate = document.getElementById("hero-date");
   const venueName = document.getElementById("venue-name");
   const venuePlace = document.getElementById("venue-place");
@@ -351,12 +482,24 @@ function applyConfig(lang) {
   const footerNames = document.getElementById("footer-names");
   const footerDate = document.getElementById("footer-date");
   const footerVenue = document.getElementById("footer-venue");
+  const ticketVenue = document.getElementById("ticket-venue");
+  const ticketDate = document.getElementById("ticket-date");
 
-  if (heroCouple) heroCouple.textContent = pick(CONFIG.coupleName, lang);
-  if (heroDate) heroDate.textContent = pick(CONFIG.heroDate, lang);
+  const couple = pick(CONFIG.coupleName, lang);
+  if (heroCouple) heroCouple.textContent = couple;
+  if (portalCouple) portalCouple.textContent = couple;
+  if (footerNames) footerNames.textContent = couple;
 
-  if (venueName) venueName.textContent = pick(CONFIG.venueName, lang);
-  if (venuePlace) venuePlace.textContent = pick(CONFIG.venuePlace, lang);
+  const dateText = pick(CONFIG.heroDate, lang);
+  if (heroDate) heroDate.textContent = dateText;
+  if (ticketDate) ticketDate.textContent = pick(CONFIG.weddingDateText, lang);
+  if (footerDate) footerDate.textContent = pick(CONFIG.weddingDateText, lang);
+
+  const vName = pick(CONFIG.venueName, lang);
+  const vPlace = pick(CONFIG.venuePlace, lang);
+  if (venueName) venueName.textContent = vName;
+  if (venuePlace) venuePlace.textContent = vPlace;
+  if (ticketVenue) ticketVenue.textContent = `${vName} · ${vPlace}`;
 
   const addrLines = pick(CONFIG.venueAddressLines, lang);
   if (venueAddress && Array.isArray(addrLines)) {
@@ -369,10 +512,8 @@ function applyConfig(lang) {
     mapIframe.src = buildMapEmbedUrl(CONFIG.mapUrl);
   }
 
-  if (footerNames) footerNames.textContent = pick(CONFIG.coupleName, lang);
-  if (footerDate) footerDate.textContent = pick(CONFIG.weddingDateText, lang);
   if (footerVenue) {
-    footerVenue.textContent = `${pick(CONFIG.venueName, lang)} ${pick(CONFIG.venuePlace, lang)}`;
+    footerVenue.textContent = `${vName} ${vPlace}`;
   }
 }
 
@@ -394,7 +535,7 @@ function bindLanguageToggle() {
   const toggle = document.getElementById("lang-toggle");
   if (!toggle) return;
   toggle.addEventListener("click", () => {
-    applyLanguage(currentLang === "ku" ? "en" : "ku");
+    applyLanguage(LANG_META[currentLang].next);
   });
 }
 
@@ -422,7 +563,7 @@ function initMagicStardust() {
   if (!layer) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  const colors = ["#c9a227", "#e8c547", "#f4e4bc", "#d4af37", "#f9f1a5"];
+  const colors = ["#8a9870", "#c4d4b0", "#faf6ee", "#b8a878", "#a8c4d4", "#5a6b48"];
   let lastSpawn = 0;
   const minGap = 38; // ms between stars (throttle)
 
@@ -489,69 +630,63 @@ function initMagicStardust() {
    Envelope Gold Dust
    ============================================ */
 
-function initEnvelopeDust() {
-  const layer = document.getElementById("envelope-dust");
-  if (!layer) return;
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+function initGateDust() {
+  const layer = document.getElementById("gate-dust");
+  if (!layer || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  const count = 24;
-  for (let i = 0; i < count; i++) {
+  for (let i = 0; i < 28; i++) {
     const p = document.createElement("span");
-    p.className = "env-particle";
+    p.className = "gate-particle";
     const size = 2 + Math.random() * 4;
     p.style.width = `${size}px`;
     p.style.height = `${size}px`;
-    p.style.left = `${15 + Math.random() * 70}%`;
-    p.style.top = `${40 + Math.random() * 45}%`;
-    p.style.animationDuration = `${4 + Math.random() * 6}s`;
+    p.style.left = `${10 + Math.random() * 80}%`;
+    p.style.bottom = `${Math.random() * 40}%`;
+    p.style.animationDuration = `${4 + Math.random() * 7}s`;
     p.style.animationDelay = `${Math.random() * 5}s`;
     layer.appendChild(p);
   }
 }
 
 /* ============================================
-   Envelope Opening
+   Olive Gates Opening
    ============================================ */
 
-function initEnvelope() {
-  const overlay = document.getElementById("envelope-overlay");
-  const envelope = document.getElementById("envelope");
-  const waxSeal = document.getElementById("wax-seal");
+function initGate() {
+  const overlay = document.getElementById("gate-overlay");
+  const seal = document.getElementById("gate-seal");
   const mainContent = document.getElementById("main-content");
-  const hint = document.getElementById("envelope-hint");
+  const hint = document.getElementById("gate-hint");
+  const chapterRail = document.getElementById("chapter-rail");
 
   bindLanguageToggle();
   resetPageScroll();
 
-  if (!overlay || !envelope || !waxSeal) return;
+  if (!overlay || !seal) return;
 
   let isOpen = false;
   let scrollTriggered = false;
 
-  function openEnvelope() {
+  function openGate() {
     if (isOpen) return;
-    if (overlay.classList.contains("envelope-hidden")) return; // splash still up
+    if (overlay.classList.contains("gate-hidden")) return;
     isOpen = true;
 
-    // Magic burst from the seal
-    const rect = waxSeal.getBoundingClientRect();
+    const rect = seal.getBoundingClientRect();
     if (typeof window.magicBurst === "function") {
       window.magicBurst(rect.left + rect.width / 2, rect.top + rect.height / 2);
     }
 
-    // Start music immediately while the seal click gesture is active
     void playWeddingMusic();
 
     overlay.classList.add("opening");
-    envelope.classList.add("opening", "opened");
-    waxSeal.setAttribute("aria-hidden", "true");
-
+    seal.setAttribute("aria-hidden", "true");
     if (hint) hint.style.opacity = "0";
 
     setTimeout(() => {
-      overlay.classList.add("removed");
+      overlay.classList.add("gate-hidden");
       overlay.setAttribute("aria-hidden", "true");
-      document.body.classList.add("envelope-open");
+      document.body.classList.add("palace-open");
       resetPageScroll();
 
       if (mainContent) {
@@ -559,35 +694,37 @@ function initEnvelope() {
         mainContent.style.visibility = "visible";
       }
 
+      if (chapterRail) chapterRail.hidden = false;
+
       initRevealAnimations(true);
       requestAnimationFrame(() => resetPageScroll());
 
       setTimeout(() => {
         overlay.style.display = "none";
-      }, 1000);
-    }, 1800);
+      }, 600);
+    }, 1600);
   }
 
-  waxSeal.addEventListener("click", openEnvelope);
+  seal.addEventListener("click", openGate);
 
-  waxSeal.addEventListener("keydown", (e) => {
+  seal.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      openEnvelope();
+      openGate();
     }
   });
 
   function onScrollAttempt() {
     if (isOpen || scrollTriggered) return;
-    if (overlay.classList.contains("envelope-hidden")) return;
+    if (overlay.classList.contains("gate-hidden")) return;
     scrollTriggered = true;
-    openEnvelope();
+    openGate();
   }
 
   window.addEventListener(
     "wheel",
     (e) => {
-      if (!isOpen && overlay && !overlay.classList.contains("removed") && !overlay.classList.contains("envelope-hidden")) {
+      if (!isOpen && overlay && !overlay.classList.contains("gate-hidden")) {
         e.preventDefault();
         onScrollAttempt();
       }
@@ -601,7 +738,7 @@ function initEnvelope() {
   }, { passive: true });
 
   window.addEventListener("touchmove", (e) => {
-    if (isOpen || !overlay || overlay.classList.contains("removed") || overlay.classList.contains("envelope-hidden")) return;
+    if (isOpen || !overlay || overlay.classList.contains("gate-hidden")) return;
     const deltaY = touchStartY - e.touches[0].clientY;
     if (Math.abs(deltaY) > 30) onScrollAttempt();
   }, { passive: true });
@@ -725,7 +862,7 @@ function initRevealAnimations(forceObserve = false) {
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -60px 0px" }
     );
   }
 
@@ -737,32 +874,32 @@ function initRevealAnimations(forceObserve = false) {
 }
 
 /* ============================================
-   Hero Parallax
+   Chapter Rail (scroll spy)
    ============================================ */
 
-function initHeroParallax() {
-  const heroBg = document.getElementById("hero-bg");
-  const hero = document.getElementById("hero");
+function initChapterRail() {
+  const dots = document.querySelectorAll(".chapter-dot");
+  const chapters = document.querySelectorAll(".chapter[data-chapter]");
 
-  if (!heroBg || !hero) return;
+  if (!dots.length || !chapters.length) return;
+
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  let ticking = false;
-
-  function onScroll() {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        const rect = hero.getBoundingClientRect();
-        const scrollProgress = -rect.top / rect.height;
-        const translateY = scrollProgress * 40;
-        heroBg.style.transform = `translateY(${translateY}px)`;
-        ticking = false;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute("data-chapter");
+          dots.forEach((dot) => {
+            dot.classList.toggle("is-active", dot.getAttribute("data-chapter") === id);
+          });
+        }
       });
-      ticking = true;
-    }
-  }
+    },
+    { threshold: 0.35, rootMargin: "-20% 0px -20% 0px" }
+  );
 
-  window.addEventListener("scroll", onScroll, { passive: true });
+  chapters.forEach((ch) => observer.observe(ch));
 }
 
 /* ============================================
@@ -840,56 +977,5 @@ function initMusic() {
     if (!started) {
       setMusicUnavailable();
     }
-  });
-}
-
-/* ============================================
-   RSVP via WhatsApp
-   ============================================ */
-
-function initRSVP() {
-  const form = document.getElementById("rsvp-form");
-  if (!form) return;
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById("rsvp-name");
-    const phone = document.getElementById("rsvp-phone");
-    const guests = document.getElementById("rsvp-guests");
-    const attendRadios = form.querySelectorAll('input[name="attend"]');
-    const message = document.getElementById("rsvp-message");
-
-    if (!name?.value.trim()) {
-      name?.focus();
-      name?.setAttribute("aria-invalid", "true");
-      return;
-    }
-
-    if (!phone?.value.trim()) {
-      phone?.focus();
-      phone?.setAttribute("aria-invalid", "true");
-      return;
-    }
-
-    let attendValue = t("rsvp.yes");
-    attendRadios.forEach((radio) => {
-      if (radio.checked) {
-        attendValue = radio.value === "Yes" ? t("rsvp.yes") : t("rsvp.no");
-      }
-    });
-
-    const messageText = [
-      t("wa.header"),
-      "",
-      `${t("wa.name")}: ${name.value.trim()}`,
-      `${t("wa.phone")}: ${phone.value.trim()}`,
-      `${t("wa.guests")}: ${guests?.value || "1"}`,
-      `${t("wa.attending")}: ${attendValue}`,
-      `${t("wa.message")}: ${message?.value.trim() || "-"}`
-    ].join("\n");
-
-    const whatsappUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(messageText)}`;
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   });
 }
