@@ -31,6 +31,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -40,6 +42,9 @@ body {
   line-height: 1.65;
   overflow-x: hidden;
   overflow-y: hidden;
+  max-width: 100vw;
+  min-height: 100vh;
+  min-height: 100dvh;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -94,10 +99,20 @@ img { max-width: 100%; height: auto; display: block; }
   position: fixed;
   inset: 0;
   z-index: 10002;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
   background: var(--olive-deep);
   transition: opacity 1s ease, visibility 1s ease;
+  padding:
+    max(1rem, env(safe-area-inset-top))
+    max(1rem, env(safe-area-inset-right))
+    max(1rem, env(safe-area-inset-bottom))
+    max(1rem, env(safe-area-inset-left));
 }
 
 .portal.dismissed {
@@ -136,8 +151,9 @@ img { max-width: 100%; height: auto; display: block; }
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 2rem 1.5rem;
-  max-width: 420px;
+  width: min(100%, 420px);
+  padding: clamp(1.25rem, 4vw, 2rem) clamp(1rem, 4vw, 1.5rem);
+  margin: auto;
 }
 
 .portal-monogram {
@@ -222,11 +238,17 @@ img { max-width: 100%; height: auto; display: block; }
   position: fixed;
   inset: 0;
   z-index: 10001;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--olive-deep);
   overflow: hidden;
   transition: opacity 0.8s ease, visibility 0.8s ease;
+  padding:
+    max(1rem, env(safe-area-inset-top))
+    max(1rem, env(safe-area-inset-right))
+    max(1rem, env(safe-area-inset-bottom))
+    max(1rem, env(safe-area-inset-left));
 }
 
 .gate-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -276,6 +298,9 @@ img { max-width: 100%; height: auto; display: block; }
   position: relative;
   z-index: 5;
   text-align: center;
+  width: 100%;
+  max-width: 360px;
+  padding: 0 0.5rem;
   transition: opacity 0.6s ease, transform 0.8s var(--ease-out);
 }
 
@@ -378,8 +403,11 @@ img { max-width: 100%; height: auto; display: block; }
 
 .chapter-dot {
   position: relative;
-  width: 10px;
-  height: 10px;
+  display: block;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
   border-radius: 50%;
   border: 1px solid var(--olive-light);
   background: transparent;
@@ -424,8 +452,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 .floating-controls {
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
+  right: max(1.25rem, env(safe-area-inset-right));
   z-index: 9000;
   display: flex;
   flex-direction: column;
@@ -434,7 +462,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 [dir="rtl"] .floating-controls {
   right: auto;
-  left: 1.5rem;
+  left: max(1.25rem, env(safe-area-inset-left));
 }
 
 .fab {
@@ -470,7 +498,7 @@ img { max-width: 100%; height: auto; display: block; }
    Palace · Chapters
    ============================================================ */
 
-.palace { opacity: 1; transition: opacity 1s ease; }
+.palace { opacity: 1; transition: opacity 1s ease; overflow-x: hidden; }
 .palace.hidden { opacity: 0; }
 
 .chapter {
@@ -480,7 +508,12 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: var(--chapter-pad) clamp(1.5rem, 5vw, 3rem);
+  padding:
+    var(--chapter-pad)
+    max(clamp(1rem, 4vw, 3rem), env(safe-area-inset-right))
+    var(--chapter-pad)
+    max(clamp(1rem, 4vw, 3rem), env(safe-area-inset-left));
+  overflow-x: hidden;
 }
 
 .chapter-inner {
@@ -530,6 +563,9 @@ img { max-width: 100%; height: auto; display: block; }
 .hero-inner {
   position: relative;
   z-index: 2;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 0.5rem;
 }
 
 .hero-eyebrow {
@@ -541,9 +577,11 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .hero-names {
-  font-size: clamp(3rem, 12vw, 6.5rem);
+  font-size: clamp(2.4rem, 11vw, 6.5rem);
   color: var(--olive-deep);
   margin-bottom: 1rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .hero-divider {
@@ -920,7 +958,8 @@ img { max-width: 100%; height: auto; display: block; }
   gap: 1.25rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 0.5rem 0 1.5rem;
+  scroll-padding-inline: 1rem;
+  padding: 0.5rem max(1rem, env(safe-area-inset-right)) 1.5rem max(1rem, env(safe-area-inset-left));
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
@@ -1171,6 +1210,10 @@ img { max-width: 100%; height: auto; display: block; }
 @media (min-width: 768px) {
   .hero-curtain { width: 12%; }
 
+  .scroll-cue {
+    bottom: 2.5rem;
+  }
+
   .venue-hero { min-height: 80vh; }
 
   .venue-overlay-card {
@@ -1196,7 +1239,257 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 @media (max-width: 767px) {
+  :root {
+    --chapter-pad: clamp(2.25rem, 7vh, 3.5rem);
+  }
+
   .chapter-rail { display: none !important; }
+
+  .portal-tagline {
+    font-size: 0.92rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .portal-prompt {
+    letter-spacing: 0.15em;
+    font-size: 0.62rem;
+  }
+
+  .portal-lang {
+    padding: 0.85rem 1rem;
+  }
+
+  .portal-lang-label {
+    font-size: 1.05rem;
+  }
+
+  .portal-monogram {
+    letter-spacing: 0.3em;
+  }
+
+  .gate-medallion {
+    width: min(62vw, 220px);
+    height: min(62vw, 220px);
+    margin: 0 auto;
+  }
+
+  .gate-hint {
+    letter-spacing: 0.12em;
+    font-size: 0.58rem;
+    margin-top: 1.5rem;
+    padding: 0 0.25rem;
+    line-height: 1.6;
+  }
+
+  .gate-invited {
+    letter-spacing: 0.1em;
+    padding: 0 0.35rem;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .hero-curtain {
+    width: 8%;
+    opacity: 0.65;
+  }
+
+  .hero-eyebrow {
+    letter-spacing: 0.18em;
+    font-size: 0.62rem;
+  }
+
+  .hero-divider {
+    letter-spacing: 0.25em;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .chapter-label {
+    letter-spacing: 0.12em;
+    font-size: 0.62rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .blessing-frame {
+    padding: 1.5rem 1.15rem;
+  }
+
+  .blessing-sub {
+    letter-spacing: 0.1em;
+  }
+
+  .blessing-body {
+    font-size: 1.05rem;
+  }
+
+  .countdown-orbit {
+    gap: 0.65rem;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .orbit-ring {
+    inset: -8%;
+  }
+
+  .orbit-cell {
+    padding: 0.85rem 0.25rem;
+  }
+
+  .orbit-num {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+
+  .orbit-label {
+    letter-spacing: 0.08em;
+    font-size: 0.55rem;
+  }
+
+  .event-ticket {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ticket-stub {
+    flex: none;
+    flex-direction: row;
+    width: 100%;
+    padding: 0.65rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .ticket-stub-text {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 0.65rem;
+  }
+
+  .ticket-stub-line {
+    width: 32px;
+    height: 1px;
+  }
+
+  .ticket-main {
+    padding: 1.35rem 1.15rem;
+  }
+
+  .ticket-time {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .ticket-event {
+    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .ticket-venue,
+  .ticket-date {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+  }
+
+  .venue-hero {
+    min-height: 50vh;
+    min-height: 50dvh;
+  }
+
+  .venue-overlay-card {
+    margin: 0 0.85rem -2rem;
+    padding: 1.35rem 1.15rem;
+  }
+
+  .venue-map-wrap {
+    padding: 3.25rem 0.85rem 2rem;
+  }
+
+  .venue-map-wrap iframe {
+    height: 220px;
+  }
+
+  .btn-primary {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .chapter-story {
+    justify-content: flex-start;
+    padding-top: clamp(2.5rem, 8vh, 4rem);
+  }
+
+  .chapter-story .chapter-inner {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .story-card {
+    flex: 0 0 min(250px, 82vw);
+    padding: 1.35rem 1.15rem;
+  }
+
+  .gift-card {
+    padding: 2rem 1.15rem;
+  }
+
+  .gift-text {
+    font-size: 1.05rem;
+  }
+
+  .palace-footer {
+    padding: 2.5rem 1rem max(4rem, calc(env(safe-area-inset-bottom) + 2.5rem));
+  }
+
+  .footer-date,
+  .footer-venue {
+    letter-spacing: 0.04em;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+  }
+
+  .scroll-cue-text {
+    letter-spacing: 0.15em;
+  }
+
+  .scroll-cue {
+    bottom: max(5.75rem, calc(env(safe-area-inset-bottom) + 4.75rem));
+  }
+
+  .fab {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-names {
+    font-size: clamp(1.85rem, 10vw, 2.2rem);
+  }
+
+  .lang-ku .hero-names,
+  .lang-ar .hero-names {
+    font-size: clamp(1.65rem, 9vw, 2rem);
+  }
+
+  .portal-couple {
+    font-size: 1.55rem;
+  }
+
+  .orbit-num {
+    font-size: 1.5rem;
+  }
+
+  .gate-medallion {
+    width: min(68vw, 200px);
+    height: min(68vw, 200px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
