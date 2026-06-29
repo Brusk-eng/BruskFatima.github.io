@@ -421,7 +421,7 @@ function initMagicStardust() {
   if (!layer) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  const colors = ["#c9a962", "#e8d5a8", "#fff4d6", "#e8c4c4"];
+  const colors = ["#c9a227", "#e8c547", "#f4e4bc", "#d4af37", "#f9f1a5"];
   let lastSpawn = 0;
   const minGap = 38; // ms between stars (throttle)
 
@@ -589,8 +589,8 @@ function initAmbient() {
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  const petalCount = 12;
-  const sparkleCount = 22;
+  const petalCount = 18;
+  const sparkleCount = 35;
 
   for (let i = 0; i < petalCount; i++) {
     const petal = document.createElement("div");
