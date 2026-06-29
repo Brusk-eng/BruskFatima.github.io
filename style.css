@@ -131,15 +131,30 @@ img { max-width: 100%; height: auto; display: block; }
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 52%;
+  width: 50%;
   background:
-    linear-gradient(90deg, rgba(0,0,0,0.15), transparent 40%),
     repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0,0,0,0.03) 3px, rgba(0,0,0,0.03) 6px),
     linear-gradient(180deg, #3d4a32 0%, #4a5a3c 50%, #3d4a32 100%);
 }
 
-.portal-curtain-left { left: 0; transform-origin: left; }
-.portal-curtain-right { right: 0; transform-origin: right; }
+.portal-curtain-left {
+  left: 0;
+  transform-origin: left;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.12), transparent 35%),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0,0,0,0.03) 3px, rgba(0,0,0,0.03) 6px),
+    linear-gradient(180deg, #3d4a32 0%, #4a5a3c 50%, #3d4a32 100%);
+}
+
+.portal-curtain-right {
+  left: 50%;
+  right: auto;
+  transform-origin: right;
+  background:
+    linear-gradient(270deg, rgba(0,0,0,0.12), transparent 35%),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0,0,0,0.03) 3px, rgba(0,0,0,0.03) 6px),
+    linear-gradient(180deg, #3d4a32 0%, #4a5a3c 50%, #3d4a32 100%);
+}
 
 .portal-glow {
   position: absolute;
