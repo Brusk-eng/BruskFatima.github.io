@@ -38,7 +38,7 @@ const CONFIG = {
 
   // Venue
   venueName: { en: "Divan Erbil Hotel", ku: "هۆتێلی دیڤان هەولێر" },
-  venuePlace: { en: "Ballroom", ku: "هۆڵی ئاهەنگ" },
+  venuePlace: { en: "Grand Ballroom", ku: "هۆڵی ئاهەنگی گەورە" },
   venueAddressLines: {
     en: ["Divan Erbil Hotel", "Gulan Street", "Erbil", "Kurdistan Region", "Iraq"],
     ku: ["هۆتێلی دیڤان هەولێر", "شەقامی گوڵان", "هەولێر", "هەرێمی کوردستان", "عێراق"]

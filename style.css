@@ -1326,6 +1326,85 @@ img {
   opacity: 0.85;
 }
 
+.venue-photo {
+  width: 100%;
+  max-width: 280px;
+  margin: 0;
+}
+
+.venue-photo-frame {
+  position: relative;
+  padding: 6px;
+  background: linear-gradient(145deg, rgba(201, 162, 39, 0.55), rgba(138, 106, 26, 0.25));
+  border-radius: 4px;
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(201, 162, 39, 0.12);
+  overflow: hidden;
+}
+
+.venue-photo-frame::before,
+.venue-photo-frame::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: var(--gold-bright);
+  border-style: solid;
+  z-index: 2;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.venue-photo-frame::before {
+  top: 10px;
+  left: 10px;
+  border-width: 1px 0 0 1px;
+}
+
+.venue-photo-frame::after {
+  bottom: 10px;
+  right: 10px;
+  border-width: 0 1px 1px 0;
+}
+
+.venue-hotel-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  aspect-ratio: 932 / 768;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 2px;
+  filter: contrast(1.05) saturate(1.1);
+}
+
+.venue-photo-shine {
+  position: absolute;
+  inset: 6px;
+  border-radius: 2px;
+  background: linear-gradient(
+    125deg,
+    rgba(255, 248, 220, 0.12) 0%,
+    transparent 35%,
+    transparent 65%,
+    rgba(201, 162, 39, 0.08) 100%
+  );
+  pointer-events: none;
+}
+
+.venue-photo-credit {
+  margin-top: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  opacity: 0.75;
+}
+
 .hotel-svg rect,
 .hotel-svg path {
   filter: brightness(0.7) sepia(0.5) hue-rotate(-10deg);
@@ -2085,10 +2164,17 @@ img {
   .venue-card {
     flex-direction: row;
     text-align: left;
+    align-items: center;
+  }
+
+  .venue-photo {
+    flex: 0 0 min(42%, 280px);
+    max-width: 280px;
   }
 
   .venue-info {
     text-align: left;
+    flex: 1;
   }
 
   .countdown {
@@ -2101,6 +2187,7 @@ img {
 
   [dir="rtl"] .venue-card {
     flex-direction: row-reverse;
+    align-items: center;
   }
 
   [dir="rtl"] .venue-info {
