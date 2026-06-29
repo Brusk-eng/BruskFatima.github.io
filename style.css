@@ -845,19 +845,29 @@ img { max-width: 100%; height: auto; display: block; }
 .chapter-venue {
   padding: 0;
   min-height: auto;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .venue-hero {
   position: relative;
   min-height: 70vh;
+  min-height: 70dvh;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  width: 100%;
+  padding-inline: max(clamp(1rem, 4vw, 2rem), env(safe-area-inset-left)) max(clamp(1rem, 4vw, 2rem), env(safe-area-inset-right));
+  box-sizing: border-box;
 }
 
 .venue-panorama {
   position: absolute;
   inset: 0;
   margin: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 .venue-img {
@@ -881,12 +891,15 @@ img { max-width: 100%; height: auto; display: block; }
 .venue-overlay-card {
   position: relative;
   z-index: 2;
-  margin: 0 clamp(1rem, 4vw, 2rem) -3rem;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto -3rem;
   padding: 2rem;
   background: var(--ivory);
   box-shadow: var(--shadow-deep);
   border-radius: 4px;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .venue-name {
@@ -912,13 +925,21 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .venue-map-wrap {
-  padding: 5rem 1.5rem 3rem;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  padding:
+    5rem
+    max(1.5rem, env(safe-area-inset-right))
+    3rem
+    max(1.5rem, env(safe-area-inset-left));
+  box-sizing: border-box;
 }
 
 .venue-map-wrap iframe {
+  display: block;
   width: 100%;
+  max-width: 100%;
   height: 280px;
   border: 1px solid rgba(90, 107, 72, 0.2);
   border-radius: 4px;
@@ -1214,12 +1235,18 @@ img { max-width: 100%; height: auto; display: block; }
     bottom: 2.5rem;
   }
 
-  .venue-hero { min-height: 80vh; }
+  .venue-hero { min-height: 80vh; min-height: 80dvh; }
+
+  .venue-hero {
+    align-items: flex-end;
+    padding-inline: 0;
+  }
 
   .venue-overlay-card {
+    width: 100%;
+    max-width: 380px;
     margin-left: auto;
     margin-right: clamp(2rem, 8vw, 6rem);
-    max-width: 380px;
     text-align: left;
   }
 
@@ -1396,15 +1423,34 @@ img { max-width: 100%; height: auto; display: block; }
   .venue-hero {
     min-height: 50vh;
     min-height: 50dvh;
+    padding-inline: max(0.85rem, env(safe-area-inset-left)) max(0.85rem, env(safe-area-inset-right));
+  }
+
+  .venue-caption {
+    display: none;
   }
 
   .venue-overlay-card {
-    margin: 0 0.85rem -2rem;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto -2rem;
     padding: 1.35rem 1.15rem;
   }
 
+  [dir="rtl"] .venue-overlay-card {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
   .venue-map-wrap {
-    padding: 3.25rem 0.85rem 2rem;
+    width: 100%;
+    max-width: 100%;
+    padding:
+      3.25rem
+      max(0.85rem, env(safe-area-inset-right))
+      2rem
+      max(0.85rem, env(safe-area-inset-left));
   }
 
   .venue-map-wrap iframe {
